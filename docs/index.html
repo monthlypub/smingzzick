@@ -1,2 +1,186 @@
-hello page
-domain check
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello Builder</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+
+    <script>
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-sanitize.js"></script>
+    
+    
+    <script src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.4.0.js"></script>
+
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style/app.css" rel="stylesheet">
+
+    <script src="app/clipboard.min.js"></script>
+
+    <script src="app/app.js"></script>
+  </head>
+  <body>
+    <div ng-app="myApp" class="root">
+        <div ng-controller="MainCtrl" class="modal-demo">
+            <script type="text/ng-template" id="sidModalContent.html">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="modal-title">{{ $ctrl.sidModalTitle }}</h3>
+                </div>
+                <div class="modal-body" id="modal-body">
+                    <div style="position:relative;">
+                        <input style="padding-left: 26px;"ng-readonly="!$ctrl.isAdd" type="text" placeholder="노래제목 or 아티스트명" ng-model="$ctrl.songSelected" uib-typeahead=" (song.artist + ' - ' + song.title) for song in $ctrl.songList | filter:$viewValue | limitTo:10" class="form-control" typeahead-on-select="$ctrl.onSongSelect($item, $model, $label)" >
+                        </input>
+                        <span style="position:absolute;left: 8px;top: 9px;color: #888888;" class="glyphicon glyphicon-search" aria-hidden="true"></span>
+
+                    </div>
+                    <hr>
+
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label for="inputMelonSid" class="col-sm-2 control-label">M</label>
+                            <div class="col-sm-10" style="position: relative;">
+                                <input ng-readonly="!$ctrl.isAdd" type="text" ng-model="$ctrl.MSID" class="form-control" id="inputMelonSid" placeholder="MELON SID (필수)">
+                                <a ng-show="$ctrl.MSID" target="_blank" ng-href="http://www.melon.com/song/detail.htm?songId={{$ctrl.MSID}}" class="btn btn-link" ng-click="goMSID();" style="position: absolute; top: 0px; right: 15px;">Link</a>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputGenieSid" class="col-sm-2 control-label">G</label>
+                            <div class="col-sm-10" style="position: relative;">
+                                <input type="text" ng-model="$ctrl.GSID" class="form-control" id="inputGenieSid" placeholder="GENIE SID">
+                                <a ng-show="$ctrl.GSID" target="_blank" ng-href="http://www.genie.co.kr/detail/songInfo?xgnm={{$ctrl.GSID}}"class="btn btn-link"style="position: absolute; top: 0px; right: 15px;">Link</a>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputBugsSid" class="col-sm-2 control-label">B</label>
+                            <div class="col-sm-10" style="position: relative;">
+                                <input type="text" ng-model="$ctrl.BSID" class="form-control" id="inputBugsSid" placeholder="BUGS SID">
+                                <a ng-show="$ctrl.BSID" target="_blank" ng-href="http://music.bugs.co.kr/track/{{$ctrl.BSID}}"class="btn btn-link" ng-click="goBSID();" style="position: absolute; top: 0px; right: 15px;">Link</a>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputNMusicSid" class="col-sm-2 control-label">N</label>
+                            <div class="col-sm-10" style="position: relative;">
+                                <input type="text" ng-model="$ctrl.NSID" class="form-control" id="inputNMusicSid" placeholder="N-MUSIC SID">
+                                <a ng-show="$ctrl.NSID" target="_blank" ng-href="http://music.naver.com/lyric/index.nhn?trackId={{$ctrl.NSID}}"class="btn btn-link" ng-click="goNSID();" style="position: absolute; top: 0px; right: 15px;">Link</a>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                    <button id="btn_copy" ng-disabled="!$ctrl.MSID" class="btn btn-primary" type="button" ng-click="$ctrl.save()" data-clipboard-text='{{$ctrl.sids}}'>Save</button>
+                    <button class="btn btn-warning" type="button" ng-click="$ctrl.close()">Cancel</button>
+                </div>
+            </script>
+
+            <script type="text/ng-template" id="linkModalContent.html">
+                <div class="modal-body" id="modal-body">
+                    <input type="text" placeholder="스밍 링크" ng-model="$ctrl.link" class="form-control"/>
+                </div>
+                <div class="modal-footer">
+                    <button id="btn_copy" class="btn btn-primary" type="button" ng-click="$ctrl.save()" data-clipboard-text='{{$ctrl.sids}}'>Save</button>
+                    <button class="btn btn-warning" type="button" ng-click="$ctrl.close()">Cancel</button>
+                </div>
+            </script>
+
+            <div class="card">
+                <p class="export">
+                <button id="btn_copy" class="btn btn-info" ng-show="buildInfos.length > 0" ng-click="exportCopy();" data-clipboard-text="{{copyTemp}}" >
+                    <span class="glyphicon glyphicon-export" aria-hidden="true"></span> Copy
+                </button>
+                <button class="btn btn-info" ng-show="buildInfos.length > 0" ng-click="exportImage();">
+                    <span class="glyphicon glyphicon-export" aria-hidden="true"></span> To Image
+                </button>
+                </p>
+
+                <div>
+                    <p>
+                        <h3 style="display: inline;">총공 빌더</h3>
+                        <h5 style="display: inline;">Beta by 럽갤</h5>
+                    </p>
+                </div>
+
+                <hr>
+
+                <div>
+                    <p>
+                        <input style="display:inline; width: 70px;text-align: right;" ng-model="default.term" type="number" class="form-control" placeholder="총공텀" min="1"/> 분 간격
+                    </p>
+                </div>
+
+                <hr>
+
+                <div>
+                    <h5>기본 총공제목</h5>
+                    <input type="text" ng-model="default.title" placeholder="총공제목" class="form-control" />
+                </div>
+
+                <hr>
+
+                <button style="width:100%;" class="btn btn-success" ng-click="onAdd();">
+                    총공 추가
+                </button>
+
+            </div>
+
+            <div class="card" ng-repeat="buildInfo in buildInfos">
+                <button class="btn btn-danger trash" ng-click="onRemove($index);">
+                    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                </button>
+
+                <div uib-timepicker ng-model="buildInfo.time" ng-change="changed()" hour-step="1" minute-step="1" show-meridian="ismeridian"></div>
+
+                <hr>
+
+                <div>
+                    <h5>갤러리</h5>
+                    <input type="text" placeholder="갤러리명" ng-model="buildInfo.galleryTitle" uib-typeahead=" gallery.name for gallery in getGallery($viewValue)" class="form-control" typeahead-on-select="onGallerySelected($item, buildInfo)" />
+                </div>
+
+                <hr>
+
+                <div>
+                    <h5>총공제목</h5>
+                    <input type="text" ng-model="buildInfo.title" placeholder="총공제목" class="form-control" />
+                </div>
+
+                <hr>
+
+                <div>
+                    <div>
+                        <h5>스밍</h5>
+                        <div>
+                        <input style="width:calc(100% - 106px)" type="text" ng-model="buildInfo.smingTitle" placeholder="스밍" class="form-control" />
+                        </div>
+                    </div>
+                    <div style="position: relative;">
+                        <div style="position: absolute;bottom: 0px;right: 0;">
+                            <button class="btn btn-default" ng-click="onLinkInput(buildInfo);">
+                                    <span class="glyphicon glyphicon-link" aria-hidden="true"></span>
+                            </button>
+                            <button class="btn btn-default" ng-click="onSIDAdd(buildInfo);">
+                                SID+
+                            </button>
+                        </div>
+                    </div>
+                    <p style="margin-top: 5px">
+                        <div  ng-repeat="sid in buildInfo.sid" style="position: relative;">
+                            <button style="margin-top:2px;margin-right:2px;" class="btn btn-info btn-sm" ng-click="onSIDEdit(buildInfo, $index);">{{sid.title}}</button>
+                            <button style="position: absolute;bottom: 0px;right: 0;" class="btn btn-warning btn-sm" ng-click="onSIDDelete(buildInfo, $index);">
+                                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                            </button>
+                        </div>
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+  </body>
+
+</html>
+
+
+<!--
