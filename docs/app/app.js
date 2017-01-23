@@ -2,30 +2,58 @@ var myApp = angular.module('myApp', ['ngAnimate', 'ngSanitize','ui.bootstrap']);
 // var myApp = angular.module('myApp', ['ui.bootstrap']);
 var dataRoot, modalRoot;
 
-function BuildInfo () {
-  this.time = new Date();
-  this.galleryInfo = null;
-  this.title = null;
-  this.smingTitle = null;
-  this.smingLink = null;
-  this.sid = [];
-}
+function BuildInfo (time, title, obj) {
+  if (obj) {
+    this.time = new Date(obj.time);
+    this.galleryInfo = obj.galleryInfo;
+    this.title = obj.title;
+    this.smingTitle = obj.smingTitle;
+    this.smingLink = obj.smingLink;
+    this.sid = obj.sid;
+  } else {
+    this.time = time;
+    this.title = title;
 
-function BuildInfo (time, title) {
-  this.time = time;
-  this.title = title;
+    this.galleryInfo = null;
+    this.smingTitle = null;
+    this.smingLink = null;
+    this.sid = [];
+  }
 
-  this.galleryInfo = null;
-  this.smingTitle = null;
-  this.smingLink = null;
-  this.sid = [];
-
-  this.toString = function() {
-    var timeText = this.time.getHours() + ":" + this.time.getMinutes();
-    
+  this.toImageString = function() {
     if (!this.galleryInfo) {
       return "";
     }
+
+    var timeText = this.time.getHours() + ":" + this.time.getMinutes() + "   " + this.galleryInfo.name;
+
+    var titleText = "제목 : ";
+    if (this.title) {
+      titleText += this.title;
+    } else {
+      titleText += "미정";
+    }
+
+    var smingText = "스밍 : ";
+    if (this.smingTitle) {
+      smingText += this.smingTitle;
+    } else {
+      smingText += "미정";
+    }
+
+    var allText = [timeText, titleText, smingText].join("\n");
+
+    return allText;
+  };
+
+  this.toString = function() {    
+    if (!this.galleryInfo) {
+      return "";
+    }
+
+    var timeText = this.time.getHours() + ":" + this.time.getMinutes();
+    // var galleryName = this.galleryInfo.name_src;
+    // timeText += " " + galleryName.split("").join("/");
 
     var galleryText;
     if (this.galleryInfo.is_minor) {
@@ -70,18 +98,57 @@ function BuildInfo (time, title) {
 
 myApp.controller('MainCtrl', ['$scope', '$http', '$sce', '$uibModal', '$document', function ($scope, $http, $sce, $uibModal, $document) {
     $ctrl = this;
+    $scope.getYMD = function() {
+        var d = new Date();
+        var mm = d.getMonth() + 1; // getMonth() is zero-based
+        var dd = d.getDate();
+
+        return [d.getFullYear(),
+                (mm>9 ? '' : '0') + mm,
+                (dd>9 ? '' : '0') + dd
+              ].join('');
+
+    }
 
     $scope.songList = [];
     $scope.songSelected;
     $scope.modalInstance;
 
-    $scope.default = {
-      "term" : 10,
-      "title" : null
-    };
+    $scope.default = loadDefaultInfo();
+    $scope.buildInfos = loadBuildInfos();
 
-    $scope.buildInfos = [];
     $scope.copyTemp = "";
+
+    var defaultChangeTimer, buildInfoChangeTimer;
+
+    $scope.$watch('buildInfos', 
+      function(newVal, oldVal) {
+        if (buildInfoChangeTimer) {
+          clearTimeout(buildInfoChangeTimer);
+        }
+
+        buildInfoChangeTimer = setTimeout(
+          function () {
+            saveBuildInfos($scope.buildInfos);
+          }
+        ,1000);
+      }
+    , true);
+
+    $scope.$watch('default', 
+      function(newVal, oldVal) {
+        if (defaultChangeTimer) {
+          clearTimeout(defaultChangeTimer);
+        }
+
+        defaultChangeTimer = setTimeout(
+          function () {
+            saveDefaultInfo($scope.default);
+          }
+        ,1000);
+      }
+    , true);
+
 
     function getLatestTime() {
 
@@ -128,7 +195,45 @@ myApp.controller('MainCtrl', ['$scope', '$http', '$sce', '$uibModal', '$document
     };
 
     $scope.exportImage = function() {
-      alert("아직 만들고 있음");
+      var textArray = $scope.buildInfos.map(
+        function(item) {
+          return item.toImageString();
+        }
+      ).filter(function (value) {return value});
+
+      if (textArray.length == 0) {
+        return;
+      }
+
+      var allArray = [];
+      for (var index in textArray) {
+        if (allArray.length) {
+          allArray.push(" ");
+        }
+        allArray = allArray.concat(textArray[index].split("\n"));
+      }
+
+      var canvas = document.getElementById("myCanvas");
+      var ctx = canvas.getContext("2d");
+
+      var fontSize = 21;
+      var canvasHeightOffset = fontSize + 5;
+      var canvasWidthOffset = 5;
+
+
+      canvas.height = allArray.length * (fontSize * 1.6) + fontSize;
+ 
+      ctx.fillStyle="white";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      ctx.font = fontSize + "px Arial";
+      ctx.fillStyle = 'black';
+
+      for (var index in allArray) {
+        ctx.fillText(allArray[index], canvasHeightOffset ,canvasHeightOffset + index * (fontSize * 1.6));
+      }
+
+      document.getElementById("downloadLink").href = canvas.toDataURL('image/jpeg');
     };
 
     $scope.onSIDAdd = function (buildInfo) {
@@ -179,6 +284,7 @@ myApp.controller('MainCtrl', ['$scope', '$http', '$sce', '$uibModal', '$document
                 function (gallery) {
                   return {
                     'name' : gallery.ko_name + " 갤러리",
+                    "name_src" : gallery.ko_name,
                     "id" : gallery.name,
                     "is_minor" : false
                   }
@@ -190,6 +296,7 @@ myApp.controller('MainCtrl', ['$scope', '$http', '$sce', '$uibModal', '$document
                 function (gallery) {
                   return {
                     'name' : gallery.m_ko_name + " 마이너 갤러리",
+                    "name_src" : gallery.m_ko_name,
                     "id" : gallery.name,
                     "is_minor" : true
                   }
@@ -398,4 +505,35 @@ myApp.controller('ModalLinkInstanceCtrl', function ($uibModalInstance, link) {
   //   window.open(item.link);
   // }
 });
+
+function saveBuildInfos(buildInfos) {
+  localStorage.setItem('BUILD_INFO', JSON.stringify(buildInfos));
+}
+
+function loadBuildInfos() {
+  if (!localStorage.getItem('BUILD_INFO')) {
+    return [];
+  }
+
+  var buildInfos = JSON.parse(localStorage.getItem('BUILD_INFO'));
+  for (var index in buildInfos) {
+    buildInfos[index]  = new BuildInfo(null, null, buildInfos[index]);
+  }
+
+  return buildInfos;
+}
+
+function saveDefaultInfo(defaultInfo) {
+  localStorage.setItem('DEFAULT_INFO', JSON.stringify(defaultInfo));
+}
+
+function loadDefaultInfo() {
+  if (!localStorage.getItem('DEFAULT_INFO')) {
+    return {
+      "term" : 10,
+      "title" : null
+    };
+  }
+  return JSON.parse(localStorage.getItem('DEFAULT_INFO'));
+}
 

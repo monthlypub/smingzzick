@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Hello Builder</title>
+    <title>총공 v0.7 by 럽갤</title>
     <meta name="viewport" content="width=device-width, user-scalable=no">
 
     <script>
@@ -23,6 +23,8 @@
   </head>
   <body>
     <div ng-app="myApp" class="root">
+        <canvas id="myCanvas" width="600" height="0"style="border:1px solid #d3d3d3;display: none;" ></canvas>
+
         <div ng-controller="MainCtrl" class="modal-demo">
             <script type="text/ng-template" id="sidModalContent.html">
                 <div class="modal-header">
@@ -90,9 +92,9 @@
                 <button id="btn_copy" class="btn btn-info" ng-show="buildInfos.length > 0" ng-click="exportCopy();" data-clipboard-text="{{copyTemp}}" >
                     <span class="glyphicon glyphicon-export" aria-hidden="true"></span> Copy
                 </button>
-                <button class="btn btn-info" ng-show="buildInfos.length > 0" ng-click="exportImage();">
+                <a id="downloadLink" download="총공_{{getYMD()}}.jpg" class="btn btn-info" ng-show="buildInfos.length > 0" ng-click="exportImage();">
                     <span class="glyphicon glyphicon-export" aria-hidden="true"></span> To Image
-                </button>
+                </a>
                 </p>
 
                 <div>
@@ -136,7 +138,7 @@
 
                 <div>
                     <h5>갤러리</h5>
-                    <input type="text" placeholder="갤러리명" ng-model="buildInfo.galleryTitle" uib-typeahead=" gallery.name for gallery in getGallery($viewValue)" class="form-control" typeahead-on-select="onGallerySelected($item, buildInfo)" />
+                    <input type="text" placeholder="갤러리명" ng-model="buildInfo.galleryInfo.name" uib-typeahead=" gallery.name for gallery in getGallery($viewValue)" class="form-control" typeahead-on-select="onGallerySelected($item, buildInfo)" />
                 </div>
 
                 <hr>
