@@ -386,7 +386,8 @@ function loadList($http, $ctrl) {
     console.log("STATUS : " + status);
     console.log("DATA : " + data);
 
-    $ctrl.songList = dataRoot = Object.values(data);
+//    $ctrl.songList = dataRoot = Object.values(data);
+    $ctrl.songListObject.keys(data).map(function(key){return dataRoot[key];});
   })
   .error(function (data, status, headers, config) {
   });
