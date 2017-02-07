@@ -1,0 +1,74 @@
+[
+        {
+        "seq_id": 170206,
+        "pos": "top",
+        "expose_from": "2016-10-26 00:00",
+        "expose_to": "2017-10-27 02:00",
+        "img_url": "http://builder.smingzzik.com/res/comeback.gif",
+        "img_width": 636,
+        "img_height": 350
+    },
+    {
+        "seq_id": 170207,
+        "pos": "mid",
+        "expose_from": "2017-02-07 00:00",
+        "expose_to": "2017-02-08 00:00",
+        "img_url": "http://builder.smingzzik.com/res/1.png",
+        "img_width": 1500,
+        "img_height": 300
+    },
+    {
+        "seq_id": 170208,
+        "pos": "mid",
+        "expose_from": "2017-02-08 00:00",
+        "expose_to": "2017-02-09 00:00",
+        "img_url": "http://builder.smingzzik.com/res/2.png",
+        "img_width": 1500,
+        "img_height": 300
+    },
+    {
+        "seq_id": 170209,
+        "pos": "mid",
+        "expose_from": "2017-02-09 00:00",
+        "expose_to": "2017-02-10 00:00",
+        "img_url": "http://builder.smingzzik.com/res/3.png",
+        "img_width": 1500,
+        "img_height": 300
+    },
+    {
+        "seq_id": 170210,
+        "pos": "mid",
+        "expose_from": "2017-02-10 00:00",
+        "expose_to": "2017-02-11 00:00",
+        "img_url": "http://builder.smingzzik.com/res/4.png",
+        "img_width": 1500,
+        "img_height": 300
+    },
+    {
+        "seq_id": 170211,
+        "pos": "mid",
+        "expose_from": "2017-02-11 00:00",
+        "expose_to": "2017-02-12 00:00",
+        "img_url": "http://builder.smingzzik.com/res/5.png",
+        "img_width": 1500,
+        "img_height": 300
+    },
+    {
+        "seq_id": 170212,
+        "pos": "mid",
+        "expose_from": "2017-02-12 00:00",
+        "expose_to": "2017-02-13 00:00",
+        "img_url": "http://builder.smingzzik.com/res/6.png",
+        "img_width": 1500,
+        "img_height": 300
+    },
+    {
+        "seq_id": 170213,
+        "pos": "mid",
+        "expose_from": "2017-02-13 00:00",
+        "expose_to": "2017-02-14 00:00",
+        "img_url": "http://builder.smingzzik.com/res/7.png",
+        "img_width": 1500,
+        "img_height": 300
+    }
+]
