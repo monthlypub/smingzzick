@@ -8,67 +8,159 @@
         "img_width": 636,
         "img_height": 350
     },
+    // 0209
     {
-        "seq_id": 1702070,
+        "seq_id": 1702090,
         "pos": "mid",
-        "expose_from": "2017-02-07 00:00",
-        "expose_to": "2017-02-11 00:00",
-        "img_url": "http://builder.smingzzik.com/res/1.png",
-        "img_width": 1500,
-        "img_height": 300
+        "expose_from": "2017-02-09 00:00",
+        "expose_to": "2017-02-10 00:00",
+        "img_url": "http://builder.smingzzik.com/res/banner0209/18.png",
+        "img_width": 0,
+        "img_height": 0
     },
     {
-        "seq_id": 1702070,
+        "seq_id": 1702090,
         "pos": "mid",
-        "expose_from": "2017-02-07 00:00",
-        "expose_to": "2017-02-11 00:00",
-        "img_url": "http://builder.smingzzik.com/res/2.png",
-        "img_width": 1500,
-        "img_height": 300
+        "expose_from": "2017-02-09 00:00",
+        "expose_to": "2017-02-10 00:00",
+        "img_url": "http://builder.smingzzik.com/res/banner0209/bannererer.png",
+        "img_width": 0,
+        "img_height": 0
     },
     {
-        "seq_id": 1702070,
+        "seq_id": 1702090,
         "pos": "mid",
-        "expose_from": "2017-02-07 00:00",
-        "expose_to": "2017-02-11 00:00",
-        "img_url": "http://builder.smingzzik.com/res/3.png",
-        "img_width": 1500,
-        "img_height": 300
+        "expose_from": "2017-02-09 00:00",
+        "expose_to": "2017-02-10 00:00",
+        "img_url": "http://builder.smingzzik.com/res/banner0209/러블리즈_배너_18.png",
+        "img_width": 0,
+        "img_height": 0
     },
     {
-        "seq_id": 1702070,
+        "seq_id": 1702090,
         "pos": "mid",
-        "expose_from": "2017-02-07 00:00",
-        "expose_to": "2017-02-11 00:00",
-        "img_url": "http://builder.smingzzik.com/res/4.png",
-        "img_width": 1500,
-        "img_height": 300
+        "expose_from": "2017-02-09 00:00",
+        "expose_to": "2017-02-10 00:00",
+        "img_url": "http://builder.smingzzik.com/res/banner0209/배너.jpg",
+        "img_width": 0,
+        "img_height": 0
     },
     {
-        "seq_id": 1702070,
+        "seq_id": 1702090,
         "pos": "mid",
-        "expose_from": "2017-02-07 00:00",
+        "expose_from": "2017-02-09 00:00",
+        "expose_to": "2017-02-10 00:00",
+        "img_url": "http://builder.smingzzik.com/res/bannerfix.gif",
+        "img_width": 0,
+        "img_height": 0
+    },
+
+
+    // 0210
+    {
+        "seq_id": 1702100,
+        "pos": "mid",
+        "expose_from": "2017-02-10 00:00",
         "expose_to": "2017-02-11 00:00",
-        "img_url": "http://builder.smingzzik.com/res/5.png",
-        "img_width": 1500,
-        "img_height": 300
+        "img_url": "http://builder.smingzzik.com/res/banner0210/17.png",
+        "img_width": 0,
+        "img_height": 0
     },
     {
-        "seq_id": 1702070,
+        "seq_id": 1702100,
         "pos": "mid",
-        "expose_from": "2017-02-07 00:00",
+        "expose_from": "2017-02-10 00:00",
         "expose_to": "2017-02-11 00:00",
-        "img_url": "http://builder.smingzzik.com/res/6.png",
-        "img_width": 1500,
-        "img_height": 300
+        "img_url": "http://builder.smingzzik.com/res/banner0210/banner12344.png",
+        "img_width": 0,
+        "img_height": 0
     },
     {
-        "seq_id": 1702070,
+        "seq_id": 1702100,
         "pos": "mid",
-        "expose_from": "2017-02-07 00:00",
+        "expose_from": "2017-02-10 00:00",
         "expose_to": "2017-02-11 00:00",
-        "img_url": "http://builder.smingzzik.com/res/7.png",
-        "img_width": 1500,
-        "img_height": 300
+        "img_url": "http://builder.smingzzik.com/res/banner0210/lovelyz-20170208-013540-000.jpg",
+        "img_width": 0,
+        "img_height": 0
+    },
+    {
+        "seq_id": 1702100,
+        "pos": "mid",
+        "expose_from": "2017-02-10 00:00",
+        "expose_to": "2017-02-11 00:00",
+        "img_url": "http://builder.smingzzik.com/res/banner0210/러블리즈_배너_17.png",
+        "img_width": 0,
+        "img_height": 0
+    },
+    {
+        "seq_id": 1702100,
+        "pos": "mid",
+        "expose_from": "2017-02-10 00:00",
+        "expose_to": "2017-02-11 00:00",
+        "img_url": "http://builder.smingzzik.com/res/bannerfix.gif",
+        "img_width": 0,
+        "img_height": 0
     }
+
+        // 0211
+        /*
+    ,{
+        "seq_id": 1702110,
+        "pos": "mid",
+        "expose_from": "2017-02-11 00:00",
+        "expose_to": "2017-02-12 00:00",
+        "img_url": "http://builder.smingzzik.com/res/banner0211/16.png",
+        "img_width": 0,
+        "img_height": 0
+    },
+    {
+        "seq_id": 1702110,
+        "pos": "mid",
+        "expose_from": "2017-02-11 00:00",
+        "expose_to": "2017-02-12 00:00",
+        "img_url": "http://builder.smingzzik.com/res/banner0211/download.png",
+        "img_width": 0,
+        "img_height": 0
+    },
+    {
+        "seq_id": 1702110,
+        "pos": "mid",
+        "expose_from": "2017-02-11 00:00",
+        "expose_to": "2017-02-12 00:00",
+        "img_url": "http://builder.smingzzik.com/res/banner0211/ㄴㄴㄴㄴ.png",
+        "img_width": 0,
+        "img_height": 0
+    },
+    */
+    // 0212
+        /*
+    {
+        "seq_id": 1702120,
+        "pos": "mid",
+        "expose_from": "2017-02-12 00:00",
+        "expose_to": "2017-02-13 00:00",
+        "img_url": "http://builder.smingzzik.com/res/banner0212/15.png",
+        "img_width": 0,
+        "img_height": 0
+    },
+    {
+        "seq_id": 1702120,
+        "pos": "mid",
+        "expose_from": "2017-02-12 00:00",
+        "expose_to": "2017-02-13 00:00",
+        "img_url": "http://builder.smingzzik.com/res/banner0212//banner_153.jpg",
+        "img_width": 0,
+        "img_height": 0
+    },
+    {
+        "seq_id": 1702120,
+        "pos": "mid",
+        "expose_from": "2017-02-12 00:00",
+        "expose_to": "2017-02-13 00:00",
+        "img_url": "http://builder.smingzzik.com/res/banner0212/banner_153_spoiler.jpg",
+        "img_width": 0,
+        "img_height": 0
+    }
+    */
 ]
