@@ -19,56 +19,136 @@
     },
     {
         "seq_id": 1702070,
+[
+        {
+        "seq_id": 1702060,
+        "pos": "top",
+        "expose_from": "2016-10-26 00:00",
+        "expose_to": "2017-2-27 00:00",
+        "img_url": "http://builder.smingzzik.com/res/comeback.gif",
+        "img_width": 636,
+        "img_height": 350
+    },
+    // 0209
+    {
+        "seq_id": 1702090,
         "pos": "mid",
-        "expose_from": "2017-02-07 00:00",
-        "expose_to": "2017-02-11 00:00",
-        "img_url": "http://builder.smingzzik.com/res/2.png",
-        "img_width": 1500,
-        "img_height": 300
+        "expose_from": "2017-02-09 00:00",
+        "expose_to": "2017-02-10 00:00",
+        "img_url": "http://builder.smingzzik.com/res/banner0209/18.png"
     },
     {
-        "seq_id": 1702070,
+        "seq_id": 1702090,
         "pos": "mid",
-        "expose_from": "2017-02-07 00:00",
-        "expose_to": "2017-02-11 00:00",
-        "img_url": "http://builder.smingzzik.com/res/3.png",
-        "img_width": 1500,
-        "img_height": 300
+        "expose_from": "2017-02-09 00:00",
+        "expose_to": "2017-02-10 00:00",
+        "img_url": "http://builder.smingzzik.com/res/banner0209/bannererer.png"
     },
     {
-        "seq_id": 1702070,
+        "seq_id": 1702090,
         "pos": "mid",
-        "expose_from": "2017-02-07 00:00",
-        "expose_to": "2017-02-11 00:00",
-        "img_url": "http://builder.smingzzik.com/res/4.png",
-        "img_width": 1500,
-        "img_height": 300
+        "expose_from": "2017-02-09 00:00",
+        "expose_to": "2017-02-10 00:00",
+        "img_url": "http://builder.smingzzik.com/res/banner0209/러블리즈_배너_18.png"
     },
     {
-        "seq_id": 1702070,
+        "seq_id": 1702090,
         "pos": "mid",
-        "expose_from": "2017-02-07 00:00",
-        "expose_to": "2017-02-11 00:00",
-        "img_url": "http://builder.smingzzik.com/res/5.png",
-        "img_width": 1500,
-        "img_height": 300
+        "expose_from": "2017-02-09 00:00",
+        "expose_to": "2017-02-10 00:00",
+        "img_url": "http://builder.smingzzik.com/res/banner0209/배너.jpg"
     },
     {
-        "seq_id": 1702070,
+        "seq_id": 1702090,
         "pos": "mid",
-        "expose_from": "2017-02-07 00:00",
+        "expose_from": "2017-02-09 00:00",
+        "expose_to": "2017-02-10 00:00",
+        "img_url": "http://builder.smingzzik.com/res/bannerfix.gif"
+    },
+
+
+    // 0210
+    {
+        "seq_id": 1702100,
+        "pos": "mid",
+        "expose_from": "2017-02-10 00:00",
         "expose_to": "2017-02-11 00:00",
-        "img_url": "http://builder.smingzzik.com/res/6.png",
-        "img_width": 1500,
-        "img_height": 300
+        "img_url": "http://builder.smingzzik.com/res/banner0210/17.png"
     },
     {
-        "seq_id": 1702070,
+        "seq_id": 1702100,
         "pos": "mid",
-        "expose_from": "2017-02-07 00:00",
+        "expose_from": "2017-02-10 00:00",
         "expose_to": "2017-02-11 00:00",
-        "img_url": "http://builder.smingzzik.com/res/7.png",
-        "img_width": 1500,
-        "img_height": 300
+        "img_url": "http://builder.smingzzik.com/res/banner0210/banner12344.png"
+    },
+    {
+        "seq_id": 1702100,
+        "pos": "mid",
+        "expose_from": "2017-02-10 00:00",
+        "expose_to": "2017-02-11 00:00",
+        "img_url": "http://builder.smingzzik.com/res/banner0210/lovelyz-20170208-013540-000.jpg"
+    },
+    {
+        "seq_id": 1702100,
+        "pos": "mid",
+        "expose_from": "2017-02-10 00:00",
+        "expose_to": "2017-02-11 00:00",
+        "img_url": "http://builder.smingzzik.com/res/banner0210/러블리즈_배너_17.png"
+    },
+    {
+        "seq_id": 1702100,
+        "pos": "mid",
+        "expose_from": "2017-02-10 00:00",
+        "expose_to": "2017-02-11 00:00",
+        "img_url": "http://builder.smingzzik.com/res/bannerfix.gif"
+    },
+
+        // 0211
+    {
+        "seq_id": 1702110,
+        "pos": "mid",
+        "expose_from": "2017-02-11 00:00",
+        "expose_to": "2017-02-12 00:00",
+        "img_url": "http://builder.smingzzik.com/res/banner0211/16.png"
+    },
+    {
+        "seq_id": 1702110,
+        "pos": "mid",
+        "expose_from": "2017-02-11 00:00",
+        "expose_to": "2017-02-12 00:00",
+        "img_url": "http://builder.smingzzik.com/res/banner0211/download.png"
+    },
+    {
+        "seq_id": 1702110,
+        "pos": "mid",
+        "expose_from": "2017-02-11 00:00",
+        "expose_to": "2017-02-12 00:00",
+        "img_url": "http://builder.smingzzik.com/res/banner0211/ㄴㄴㄴㄴ.png"
+    }
+
+
+    // 0212
+    {
+        "seq_id": 1702120,
+        "pos": "mid",
+        "expose_from": "2017-02-12 00:00",
+        "expose_to": "2017-02-13 00:00",
+        "img_url": "http://builder.smingzzik.com/res/banner0212/15.png"
+    },
+    {
+        "seq_id": 1702120,
+        "pos": "mid",
+        "expose_from": "2017-02-12 00:00",
+        "expose_to": "2017-02-13 00:00",
+        "img_url": "http://builder.smingzzik.com/res/banner0212//banner_153.jpg"
+    },
+    {
+        "seq_id": 1702120,
+        "pos": "mid",
+        "expose_from": "2017-02-12 00:00",
+        "expose_to": "2017-02-13 00:00",
+        "img_url": "http://builder.smingzzik.com/res/banner0212/banner_153_spoiler.jpg"
     }
 ]
+
