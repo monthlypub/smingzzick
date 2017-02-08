@@ -101,10 +101,11 @@
         "img_url": "http://builder.smingzzik.com/res/bannerfix.gif",
         "img_width": 0,
         "img_height": 0
-    },
+    }
 
         // 0211
-    {
+        /*
+    ,{
         "seq_id": 1702110,
         "pos": "mid",
         "expose_from": "2017-02-11 00:00",
@@ -131,7 +132,9 @@
         "img_width": 0,
         "img_height": 0
     },
+    */
     // 0212
+        /*
     {
         "seq_id": 1702120,
         "pos": "mid",
@@ -159,5 +162,6 @@
         "img_width": 0,
         "img_height": 0
     }
+    */
 ]
 
