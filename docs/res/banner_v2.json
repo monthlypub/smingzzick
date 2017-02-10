@@ -8,54 +8,6 @@
         "img_width": 636,
         "img_height": 350
     },
-    // 0209
-    {
-        "seq_id": 1702090,
-        "pos": "mid",
-        "expose_from": "2017-02-09 00:00",
-        "expose_to": "2017-02-10 00:00",
-        "img_url": "http://builder.smingzzik.com/res/banner0209/18.png",
-        "img_width": 0,
-        "img_height": 0
-    },
-    {
-        "seq_id": 1702090,
-        "pos": "mid",
-        "expose_from": "2017-02-09 00:00",
-        "expose_to": "2017-02-10 00:00",
-        "img_url": "http://builder.smingzzik.com/res/banner0209/bannererer.png",
-        "img_width": 0,
-        "img_height": 0
-    },
-    {
-        "seq_id": 1702090,
-        "pos": "mid",
-        "expose_from": "2017-02-09 00:00",
-        "expose_to": "2017-02-10 00:00",
-        "img_url": "http://builder.smingzzik.com/res/banner0209/러블리즈_배너_18.png",
-        "img_width": 0,
-        "img_height": 0
-    },
-    {
-        "seq_id": 1702090,
-        "pos": "mid",
-        "expose_from": "2017-02-09 00:00",
-        "expose_to": "2017-02-10 00:00",
-        "img_url": "http://builder.smingzzik.com/res/banner0209/배너.jpg",
-        "img_width": 0,
-        "img_height": 0
-    },
-    {
-        "seq_id": 1702090,
-        "pos": "mid",
-        "expose_from": "2017-02-09 00:00",
-        "expose_to": "2017-02-10 00:00",
-        "img_url": "http://builder.smingzzik.com/res/bannerfix.gif",
-        "img_width": 0,
-        "img_height": 0
-    },
-
-
     // 0210
     {
         "seq_id": 1702100,
@@ -103,8 +55,7 @@
         "img_height": 0
     }
 
-        // 0211
-        /*
+    // 0211
     ,{
         "seq_id": 1702110,
         "pos": "mid",
@@ -132,9 +83,16 @@
         "img_width": 0,
         "img_height": 0
     },
-    */
+        {
+        "seq_id": 1702110,
+        "pos": "mid",
+        "expose_from": "2017-02-11 00:00",
+        "expose_to": "2017-02-12 00:00",
+        "img_url": "http://builder.smingzzik.com/res/banner0211/IMG_7885.JPG",
+        "img_width": 0,
+        "img_height": 0
+    },
     // 0212
-        /*
     {
         "seq_id": 1702120,
         "pos": "mid",
@@ -161,6 +119,45 @@
         "img_url": "http://builder.smingzzik.com/res/banner0212/banner_153_spoiler.jpg",
         "img_width": 0,
         "img_height": 0
+    },
+    {
+        "seq_id": 1702120,
+        "pos": "mid",
+        "expose_from": "2017-02-12 00:00",
+        "expose_to": "2017-02-13 00:00",
+        "img_url": "http://builder.smingzzik.com/res/banner0212/lovelyz-20170210-022023-002.jpg",
+        "img_width": 0,
+        "img_height": 0
+    }
+    // 0213
+    /*
+    ,{
+        "seq_id": 1702130,
+        "pos": "mid",
+        "expose_from": "2017-02-13 00:00",
+        "expose_to": "2017-02-14 00:00",
+        "img_url": "http://builder.smingzzik.com/res/banner0213/bannergif.gif",
+        "img_width": 0,
+        "img_height": 0
+    },
+    {
+        "seq_id": 1702130,
+        "pos": "mid",
+        "expose_from": "2017-02-13 00:00",
+        "expose_to": "2017-02-14 00:00",
+        "img_url": "http://builder.smingzzik.com/res/banner0213/lovelyz-20170210-022025-003.jpg",
+        "img_width": 0,
+        "img_height": 0
+    },
+    {
+        "seq_id": 1702130,
+        "pos": "mid",
+        "expose_from": "2017-02-13 00:00",
+        "expose_to": "2017-02-14 00:00",
+        "img_url": "http://builder.smingzzik.com/res/banner0213/lovelyz-20170210-022026-004.jpg",
+        "img_width": 0,
+        "img_height": 0
     }
     */
 ]
+
