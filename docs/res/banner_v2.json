@@ -9,6 +9,7 @@
         "img_height": 350
     },
     // 0210
+    /*
     {
         "seq_id": 1702100,
         "pos": "mid",
@@ -54,8 +55,9 @@
         "img_width": 0,
         "img_height": 0
     }
-
+    */
     // 0211
+    /*
     ,{
         "seq_id": 1702110,
         "pos": "mid",
@@ -92,7 +94,9 @@
         "img_width": 0,
         "img_height": 0
     },
+    */
     // 0212
+    /*
     {
         "seq_id": 1702120,
         "pos": "mid",
@@ -129,8 +133,8 @@
         "img_width": 0,
         "img_height": 0
     }
+    */
     // 0213
-    /*
     ,{
         "seq_id": 1702130,
         "pos": "mid",
@@ -158,6 +162,5 @@
         "img_width": 0,
         "img_height": 0
     }
-    */
 ]
 
