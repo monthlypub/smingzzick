@@ -1,91 +1,23 @@
 [
-	/*
+	
         {
-        "seq_id": 1702060,
+        "seq_id": 1702210,
         "pos": "top",
         "expose_from": "2016-10-26 00:00",
         "expose_to": "2017-2-27 00:00",
-        "img_url": "http://builder.smingzzik.com/res/comeback.gif",
-        "img_width": 636,
-        "img_height": 350
+        "img_url": "http://builder.smingzzik.com/res/2nd_teaser_00.gif",
+        "img_width": 640,
+        "img_height": 320
     },
-    */
     {
-        "seq_id": 1702160,
+        "seq_id": 1702211,
         "pos": "mid",
         "expose_from": "2017-02-16 00:00",
-        "expose_to": "2017-02-17 00:00",
-        "img_url": "http://builder.smingzzik.com/res/banner0216/5.png",
-        "img_width": 0,
-        "img_height": 0
-    },
-    {
-        "seq_id": 1702160,
-        "pos": "mid",
-        "expose_from": "2017-02-16 00:00",
-        "expose_to": "2017-02-17 00:00",
-        "img_url": "http://builder.smingzzik.com/res/banner0216/11.png",
-        "img_width": 0,
-        "img_height": 0
-    },
-    {
-        "seq_id": 1702160,
-        "pos": "mid",
-        "expose_from": "2017-02-16 00:00",
-        "expose_to": "2017-02-17 00:00",
-        "img_url": "http://builder.smingzzik.com/res/banner0216/p.jpg",
-        "img_width": 0,
-        "img_height": 0
-    },
-
-    {
-        "seq_id": 1702170,
-        "pos": "mid",
-        "expose_from": "2017-02-17 00:00",
-        "expose_to": "2017-02-18 00:00",
-        "img_url": "http://builder.smingzzik.com/res/banner0217/3.jpg",
-        "img_width": 0,
-        "img_height": 0
-    },
-    {
-        "seq_id": 1702170,
-        "pos": "mid",
-        "expose_from": "2017-02-17 00:00",
-        "expose_to": "2017-02-18 00:00",
-        "img_url": "http://builder.smingzzik.com/res/banner0217/4.png",
-        "img_width": 0,
-        "img_height": 0
-    },
-
-    {
-        "seq_id": 1702180,
-        "pos": "mid",
-        "expose_from": "2017-02-18 00:00",
-        "expose_to": "2017-02-19 00:00",
-        "img_url": "http://builder.smingzzik.com/res/banner0218/1.png",
-        "img_width": 0,
-        "img_height": 0
-    },
-    {
-        "seq_id": 1702190,
-        "pos": "mid",
-        "expose_from": "2017-02-19 00:00",
-        "expose_to": "2017-02-20 00:00",
-        "img_url": "http://builder.smingzzik.com/res/banner0219/b.png",
-        "img_width": 0,
-        "img_height": 0
-    },
-    {
-        "seq_id": 1702200,
-        "pos": "mid",
-        "expose_from": "2017-02-20 00:00",
-        "expose_to": "2017-02-21 00:00",
-        "img_url": "http://builder.smingzzik.com/res/banner0220/banner40.png",
+        "expose_to": "2017-02-27 22:00",
+        "img_url": "http://builder.smingzzik.com/res/banner_restart.png",
         "img_width": 0,
         "img_height": 0
     }
-
-
 
 ]
 
