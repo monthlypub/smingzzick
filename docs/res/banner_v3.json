@@ -1,0 +1,22 @@
+[
+	
+        {
+        "seq_id": 1702220,
+        "pos": "top",
+        "expose_from": "2016-10-26 00:00",
+        "expose_to": "2017-2-27 00:00",
+        "img_url": "http://builder.smingzzik.com/res/cbz.gif",
+        "img_width": 640,
+        "img_height": 358
+    },
+    {
+        "seq_id": 1702221,
+        "pos": "mid",
+        "expose_from": "2017-02-16 00:00",
+        "expose_to": "2017-02-27 22:00",
+        "img_url": "http://builder.smingzzik.com/res/banner_restart.png",
+        "img_width": 0,
+        "img_height": 0
+    }
+
+]
