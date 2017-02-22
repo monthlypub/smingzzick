@@ -31,15 +31,6 @@
         "pos": "mid",
         "expose_from": "2017-02-22 00:00",
         "expose_to": "2017-02-23 00:00",
-        "img_url": "http://builder.smingzzik.com/res/banner2.jpg",
-        "img_width": 0,
-        "img_height": 0
-    },
-    {
-        "seq_id": 1702229,
-        "pos": "mid",
-        "expose_from": "2017-02-22 00:00",
-        "expose_to": "2017-02-23 00:00",
         "img_url": "http://builder.smingzzik.com/res/fixweekend.gif",
         "img_width": 0,
         "img_height": 0
@@ -60,15 +51,6 @@
         "expose_from": "2017-02-23 00:00",
         "expose_to": "2017-02-24 00:00",
         "img_url": "http://builder.smingzzik.com/res/banner1.jpg",
-        "img_width": 0,
-        "img_height": 0
-    },
-    {
-        "seq_id": 1702230,
-        "pos": "mid",
-        "expose_from": "2017-02-23 00:00",
-        "expose_to": "2017-02-24 00:00",
-        "img_url": "http://builder.smingzzik.com/res/banner2.jpg",
         "img_width": 0,
         "img_height": 0
     },
@@ -104,15 +86,6 @@
         "pos": "mid",
         "expose_from": "2017-02-24 00:00",
         "expose_to": "2017-02-25 00:00",
-        "img_url": "http://builder.smingzzik.com/res/banner2.jpg",
-        "img_width": 0,
-        "img_height": 0
-    },
-    {
-        "seq_id": 1702240,
-        "pos": "mid",
-        "expose_from": "2017-02-24 00:00",
-        "expose_to": "2017-02-25 00:00",
         "img_url": "http://builder.smingzzik.com/res/fixweekend.gif",
         "img_width": 0,
         "img_height": 0
@@ -132,15 +105,6 @@
         "expose_from": "2017-02-25 00:00",
         "expose_to": "2017-02-26 00:00",
         "img_url": "http://builder.smingzzik.com/res/banner1.jpg",
-        "img_width": 0,
-        "img_height": 0
-    },
-    {
-        "seq_id": 1702250,
-        "pos": "mid",
-        "expose_from": "2017-02-25 00:00",
-        "expose_to": "2017-02-26 00:00",
-        "img_url": "http://builder.smingzzik.com/res/banner2.jpg",
         "img_width": 0,
         "img_height": 0
     },
