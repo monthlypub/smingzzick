@@ -1,0 +1,29 @@
+[
+    {
+        "seq_id": 1702226,
+        "pos": "top",
+        "expose_from": "2016-10-26 00:00",
+        "expose_to": "2017-2-27 00:00",
+        "img_url": "http://builder.smingzzik.com/res/cbz.mp4",
+        "img_width": 640,
+        "img_height": 358
+    },
+    {
+        "seq_id": 1702227,
+        "pos": "mid",
+        "expose_from": "2017-02-16 00:00",
+        "expose_to": "2017-02-27 22:00",
+        "img_url": "http://builder.smingzzik.com/res/lovelyz-20170222-151645-000.jpg",
+        "img_width": 0,
+        "img_height": 0
+    },
+    {
+        "seq_id": 1702228,
+        "pos": "mid",
+        "expose_from": "2017-02-16 00:00",
+        "expose_to": "2017-02-27 22:00",
+        "img_url": "http://builder.smingzzik.com/res/lovelyz-20170222-151703-000.jpg",
+        "img_width": 0,
+        "img_height": 0
+    }
+]
