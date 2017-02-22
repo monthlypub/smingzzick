@@ -25,5 +25,14 @@
         "img_url": "http://builder.smingzzik.com/res/lovelyz-20170222-151703-000.jpg",
         "img_width": 0,
         "img_height": 0
+    },
+    {
+        "seq_id": 1702228,
+        "pos": "mid",
+        "expose_from": "2017-02-16 00:00",
+        "expose_to": "2017-02-27 22:00",
+        "img_url": "http://builder.smingzzik.com/res/fixweekend.mp4.jpg",
+        "img_width": 0,
+        "img_height": 0
     }
 ]
