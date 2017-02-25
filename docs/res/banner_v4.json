@@ -8,6 +8,7 @@
         "img_width": 640,
         "img_height": 358
     },
+    /*
     {
         "seq_id": 1702229,
         "pos": "mid",
@@ -114,6 +115,17 @@
         "expose_from": "2017-02-25 00:00",
         "expose_to": "2017-02-26 00:00",
         "img_url": "http://builder.smingzzik.com/res/fixweekend.gif",
+        "img_width": 0,
+        "img_height": 0
+    }
+    */
+     {
+        "seq_id": 1702251,
+        "pos": "mid",
+        "expose_from": "2017-02-25 00:00",
+        "expose_to": "2017-02-26 00:00",
+        "img_url": "http://builder.smingzzik.com/res/event.png",
+        "link": "http://gall.dcinside.com/board/view/?id=lovelyz&no=2457671",
         "img_width": 0,
         "img_height": 0
     }
