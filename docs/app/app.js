@@ -47,7 +47,7 @@ function BuildInfo (time, title, obj) {
   };
 
   this.toString = function() {    
-    if (!this.galleryInfo) {
+    if (!this.galleryInfo || !this.galleryInfo.id) {
       return "";
     }
 
@@ -175,6 +175,7 @@ myApp.controller('MainCtrl', ['$scope', '$http', '$sce', '$uibModal', '$document
       ).filter(function (value) {return value});
 
       if (textArray.length == 0) {
+        alert('최소 하나 이상의 총공을 넣어주세요.\n갤러리 지정 필수입니다.');
         return;
       }
 
@@ -185,10 +186,14 @@ myApp.controller('MainCtrl', ['$scope', '$http', '$sce', '$uibModal', '$document
       clipboard.on('success', function(e) {
         alert('클립보드에 복사되었습니다.');
         $scope.copyTemp = "";
+
+        e.clearSelection();
+        clipboard.destroy();
       });
 
       clipboard.on('error', function(e) {
           $scope.copyTemp = "";
+          clipboard.destroy();
       });
 
 
@@ -269,6 +274,13 @@ myApp.controller('MainCtrl', ['$scope', '$http', '$sce', '$uibModal', '$document
         buildInfo.galleryInfo = $item;
     };
 
+    $scope.onGalleryNameChanged = function (buildInfo) {
+      if (buildInfo.galleryInfo && buildInfo.galleryInfo.id && buildInfo.galleryInfo.name !== buildInfo.galleryInfo.name_src) {
+        delete buildInfo["galleryInfo"]; 
+      }
+    };
+
+
     $scope.getGallery = function getGallery(keyword) {
       var url = 'http://search.dcinside.com/autocomplete?callback=JSON_CALLBACK&k=' + keyword;
       $sce.trustAsResourceUrl(url)
@@ -282,9 +294,10 @@ myApp.controller('MainCtrl', ['$scope', '$http', '$sce', '$uibModal', '$document
           if (data['0']) {
             majorGalleryInfo = data['0'].map(
                 function (gallery) {
+                  var name = gallery.ko_name + " 갤러리";
                   return {
-                    'name' : gallery.ko_name + " 갤러리",
-                    "name_src" : gallery.ko_name,
+                    'name' : name,
+                    "name_src" : name,
                     "id" : gallery.name,
                     "is_minor" : false
                   }
@@ -294,9 +307,10 @@ myApp.controller('MainCtrl', ['$scope', '$http', '$sce', '$uibModal', '$document
           if (data['1']) {
             minorGalleryInfo = data['1'].map(
                 function (gallery) {
+                  var name = gallery.m_ko_name + " 마이너 갤러리";
                   return {
-                    'name' : gallery.m_ko_name + " 마이너 갤러리",
-                    "name_src" : gallery.m_ko_name,
+                    'name' : name,
+                    "name_src" : name,
                     "id" : gallery.name,
                     "is_minor" : true
                   }
@@ -425,6 +439,8 @@ myApp.controller('ModalSIDInstanceCtrl', function ($uibModalInstance, $http, son
   $ctrl.GSID = song && song.genie ? song.genie : null;
   $ctrl.BSID = song && song.bugs ? song.bugs : null;
   $ctrl.NSID = song && song.naver ? song.naver : null;
+  $ctrl.YSID = song && song.youtube ? song.youtube : null;
+
 
 
   $ctrl.save = function () {
@@ -436,6 +452,7 @@ myApp.controller('ModalSIDInstanceCtrl', function ($uibModalInstance, $http, son
         "genie":null,
         "bugs":null,
         "naver":null,
+        "youtube":null,
         "text":""
       };
     }
@@ -444,6 +461,7 @@ myApp.controller('ModalSIDInstanceCtrl', function ($uibModalInstance, $http, son
     $ctrl.song.genie = $ctrl.GSID;
     $ctrl.song.bugs = $ctrl.BSID;
     $ctrl.song.naver = $ctrl.NSID;
+    $ctrl.song.youtube = $ctrl.YSID;
 
     var textArray = [];
     if ($ctrl.MSID) {
@@ -458,6 +476,10 @@ myApp.controller('ModalSIDInstanceCtrl', function ($uibModalInstance, $http, son
     if ($ctrl.NSID) {
       textArray.push("N:" + $ctrl.NSID);
     }
+    if ($ctrl.YSID) {
+      textArray.push("Y:" + $ctrl.YSID);
+    }
+
 
     $ctrl.song.text = "SID " + textArray.join("|");
 
@@ -481,6 +503,7 @@ myApp.controller('ModalSIDInstanceCtrl', function ($uibModalInstance, $http, son
     $ctrl.GSID = $item.genie ? $item.genie[0] : null;
     $ctrl.BSID = $item.bugs ? $item.bugs[0] : null;
     $ctrl.NSID = $item.naver ? $item.naver[0] : null;
+    $ctrl.YSID = $item.youtube ? $item.youtube[0] : null;
   }
 
 
