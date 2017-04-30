@@ -1,74 +1,12 @@
 [
     {
-        "seq_id": 1704210,
+        "seq_id": 1705010,
         "pos": "top",
         "expose_from": "2017-04-01 00:00",
         "expose_to": "2017-05-03 00:00",
-        "img_url": "http://builder.smingzzik.com/res/2nd_repack/teaerfinal.gif",
-        "img_width": 600,
-        "img_height": 3380
-    },
-    {
-        "seq_id": 1704211,
-        "pos": "mid",
-        "expose_from": "2017-04-01 00:00",
-        "expose_to": "2017-05-03 00:00",
-        "img_url": "http://builder.smingzzik.com/res/2nd_repack/big_grayscale.png",
+        "img_url": "http://builder.smingzzik.com/res/2nd_repack/big_banner.mp4",
         "img_width": 1000,
-        "img_height": 200
+        "img_height": 510
     },
-    {
-        "seq_id": 1704211,
-        "pos": "mid",
-        "expose_from": "2017-04-01 00:00",
-        "expose_to": "2017-05-03 00:00",
-        "img_url": "http://builder.smingzzik.com/res/2nd_repack/big_pink2.png",
-        "img_width": 1000,
-        "img_height": 200
-    },
-    {
-        "seq_id": 1704211,
-        "pos": "mid",
-        "expose_from": "2017-04-01 00:00",
-        "expose_to": "2017-05-03 00:00",
-        "img_url": "http://builder.smingzzik.com/res/2nd_repack/big_pink.png",
-        "img_width": 1000,
-        "img_height": 200
-    },
-    {
-        "seq_id": 1704211,
-        "pos": "mid",
-        "expose_from": "2017-04-01 00:00",
-        "expose_to": "2017-05-03 00:00",
-        "img_url": "http://builder.smingzzik.com/res/2nd_repack/big_blue2.png",
-        "img_width": 1000,
-        "img_height": 200
-    },
-    {
-        "seq_id": 1704211,
-        "pos": "mid",
-        "expose_from": "2017-04-01 00:00",
-        "expose_to": "2017-05-03 00:00",
-        "img_url": "http://builder.smingzzik.com/res/2nd_repack/big_blue.png",
-        "img_width": 1000,
-        "img_height": 200
-    },
-    {
-        "seq_id": 1704211,
-        "pos": "mid",
-        "expose_from": "2017-04-01 00:00",
-        "expose_to": "2017-05-03 00:00",
-        "img_url": "http://builder.smingzzik.com/res/2nd_repack/big_green2.png",
-        "img_width": 1000,
-        "img_height": 200
-    },
-    {
-        "seq_id": 1704211,
-        "pos": "mid",
-        "expose_from": "2017-04-01 00:00",
-        "expose_to": "2017-05-03 00:00",
-        "img_url": "http://builder.smingzzik.com/res/2nd_repack/big_green.png",
-        "img_width": 1000,
-        "img_height": 200
-    }
+
 ]
