@@ -1,23 +1,23 @@
 [
     
     {
-        "seq_id": 17103100,
+        "seq_id": 17110300,
         "pos": "top",
-        "expose_from": "2017-11-01 00:00",
+        "expose_from": "2017-11-03 00:00",
         "expose_to": "2017-11-14 00:00",
-        "img_url": "http://builder.smingzzik.com/res/3rd_mini/delete.gif",
+        "img_url": "http://builder.smingzzik.com/res/3rd_mini/fix44_tail_long.mp4",
         "img_width": 488,
         "img_height": 274,
-        "link": "http://www.vlive.tv/video/45601"
+        "link": "http://tv.naver.com/v/2242483/list/67096"
     },
     {
-        "seq_id": 17103101,
+        "seq_id": 17110301,
         "pos": "mid",
         "expose_from": "2017-11-01 00:00",
         "expose_to": "2017-11-14 00:00",
         "img_url": "http://builder.smingzzik.com/res/3rd_mini/3rd_mini_mid_0.png",
         "img_width": 0,
         "img_height": 0,
-        "link": "http://www.vlive.tv/video/45601"
+        "link": "http://tv.naver.com/v/2242483/list/67096"
     }
 ]
