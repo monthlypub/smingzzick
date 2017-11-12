@@ -1,44 +1,23 @@
 [
-    
     {
-        "seq_id": 17110900,
-        "pos": "top",
-        "expose_from": "2017-11-03 00:00",
-        "expose_to": "2017-11-12 00:00",
-        "img_url": "http://builder.smingzzik.com/res/3rd_mini/mini3th-2_lt.mp4",
-        "img_width": 488,
-        "img_height": 274,
-        "link": "http://tv.naver.com/v/2246204"
-    },
-    {
-        "seq_id": 17110901,
-        "pos": "mid",
-        "expose_from": "2017-11-01 00:00",
-        "expose_to": "2017-11-12 00:00",
-        "img_url": "http://builder.smingzzik.com/res/3rd_mini/3rd_mini_mid_0.png",
-        "img_width": 0,
-        "img_height": 0,
-        "link": "http://tv.naver.com/v/2246204"
-    },
-        {
-        "seq_id": 17110902,
+        "seq_id": 17111200,
         "pos": "top",
         "expose_from": "2017-11-12 00:00",
-        "expose_to": "2017-11-14 00:00",
-        "img_url": "http://builder.smingzzik.com/res/3rd_mini/finalver_lt.mp4",
-        "img_width": 488,
-        "img_height": 274,
-        "link": "http://tv.naver.com/v/2246204"
+        "expose_to": "2017-11-15 00:00",
+        "img_url": "http://builder.smingzzik.com/res/3rd_mini/smingdown000.mp4",
+        "img_width": 0,
+        "img_height": 0,
+        "link": "http://gall.dcinside.com/board/view/?id=lovelyz&no=3643616"
     },
     {
-        "seq_id": 17110903,
+        "seq_id": 17111201,
         "pos": "mid",
         "expose_from": "2017-11-12 00:00",
         "expose_to": "2017-11-15 00:00",
         "img_url": "http://builder.smingzzik.com/res/3rd_mini/3rd_mini_mid_0.png",
         "img_width": 0,
         "img_height": 0,
-        "link": "http://tv.naver.com/v/2246204"
+        "link": "http://gall.dcinside.com/board/view/?id=lovelyz&no=3643616"
     }
 
 ]
