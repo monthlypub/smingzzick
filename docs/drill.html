@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <script>
+            var lastKeyMills;
+            function isEnterGO() {
+                if(event.keyCode==13) {
+            		var input = document.getElementById("input");
+                    var keyText = document.getElementById("keyText");
+                    
+                    var inputValue = input.value.toUpperCase();
+                    var keyValue = keyText.innerText.toUpperCase();
+
+                    if (inputValue == keyValue) {
+                        var curr = new Date().getTime();
+                        appendRecord(keyValue, curr - lastKeyMills);
+                        renewKey();
+                    }
+                    input.value = "";
+                    console.log(input.value);
+                    
+		            return false;
+	            }
+            }
+
+            function renewKey() {
+                var keyText = document.getElementById("keyText");
+                keyText.innerText = makeid();
+                lastKeyMills = new Date().getTime();
+            }
+
+            function makeid() {
+                var text = "";
+                var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+                for (var i = 0; i < 6; i++) {
+                    text += possible.charAt(Math.floor(Math.random() * possible.length));
+                }
+
+                return text;
+            }
+
+            function appendRecord(keyValue, mills) {
+                var list = document.getElementById("records");
+                var li = document.createElement("li");
+                li.appendChild(document.createTextNode(keyValue + " : " + mills + "ms"));
+                list.appendChild(li);
+            }
+
+        </script>
+    </head>
+    <body>
+        <div style="align-content: center" align="center">
+            <span id="keyText" style="font-size: 40pt;">fdsafasfd</span><br/><br/>
+            <input id="input" maxlength="8" onkeydown="isEnterGO()" style="font-size: 30pt; text-transform: uppercase; width: 250px"/>
+            <ul style="list-style:none;" id="records">
+            </ul>
+        </div>
+    </body>
+    <script>
+        renewKey();
+    </script>
+</html>
