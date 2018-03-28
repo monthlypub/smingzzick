@@ -1,6 +1,10 @@
 <html>
     <head>
         <script>
+            var bestRecord = Number.MAX_VALUE;
+            var sumOfRecords = 0;
+            var avrgCount = 0;
+
             var lastKeyMills;
             function isEnterGO() {
                 if(event.keyCode==13) {
@@ -42,17 +46,49 @@
             function appendRecord(keyValue, mills) {
                 var list = document.getElementById("records");
                 var li = document.createElement("li");
-                li.appendChild(document.createTextNode(keyValue + " : " + mills + "ms"));
-                list.appendChild(li);
+
+                if (mills < 10000) {
+                    li.appendChild(document.createTextNode(keyValue + " : " + mills + "ms"));
+                    list.insertBefore(li, list.firstChild);
+                    avrgCount++;
+                } else {
+                    li.appendChild(document.createTextNode(keyValue + " : too slow"));
+                    list.insertBefore(li, list.firstChild);
+                    return;
+                }
+
+
+                sumOfRecords += mills;
+                if (mills < bestRecord) {
+                    bestRecord = mills;
+                }
+
+                var eBest = document.getElementById("best");
+                var eAvrg = document.getElementById("avrg");
+
+                
+                eBest.innerText = "BEST : " + bestRecord + "ms";
+                eAvrg.innerText = "AVRG : " + (sumOfRecords / avrgCount).toFixed() + "ms";
+
             }
 
         </script>
     </head>
     <body>
         <div style="align-content: center" align="center">
-            <span id="keyText" style="font-size: 40pt;">fdsafasfd</span><br/><br/>
+            <span id="avrg">
+                AVRG : -
+            </span>
+            <br/>
+            <span id="best">
+                BEST : -
+            </span>
+            <br/>
+            <span id="keyText" style="font-size: 40pt;">fdsafasfd</span>
+            <br/><br/>
             <input id="input" maxlength="8" onkeydown="isEnterGO()" style="font-size: 30pt; text-transform: uppercase; width: 250px"/>
-            <ul style="list-style:none;" id="records">
+            <br/>
+            <ul style="padding: 0;list-style-type: none;" id="records">
             </ul>
         </div>
     </body>
