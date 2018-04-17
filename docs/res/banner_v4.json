@@ -1,20 +1,22 @@
 [
     {
-        "seq_id": 18041301,
+        "seq_id": 18041801,
         "pos": "top",
         "expose_from": "2018-04-08 00:00",
-        "expose_to": "2018-04-23 00:00",
-        "img_url": "https://builder.smingzzik.com/res/2018_first_comback/t3.mp4",
+        "expose_to": "2018-04-24 00:00",
+        "img_url": "https://builder.smingzzik.com/res/2018_first_comback/t4.mp4",
         "img_width": 0,
-        "img_height": 0
+        "img_height": 0,
+        "link": "https://www.youtube.com/watch?v=YG-kttqEsTE"
     },
     {
-        "seq_id": 18041302,
+        "seq_id": 18041802,
         "pos": "mid",
         "expose_from": "2018-04-08 00:00",
-        "expose_to": "2018-04-23 00:00",
-        "img_url": "http://builder.smingzzik.com/res/2018_first_comback/t1.jpg",
+        "expose_to": "2018-04-24 00:00",
+        "img_url": "http://builder.smingzzik.com/res/2018_first_comback/m4.png",
         "img_width": 0,
-        "img_height": 0
+        "img_height": 0,
+        "link": "https://www.youtube.com/watch?v=YG-kttqEsTE"
     }
 ]
