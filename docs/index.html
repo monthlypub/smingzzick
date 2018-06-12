@@ -44,35 +44,35 @@
                             <label for="inputMelonSid" class="col-sm-2 control-label">M</label>
                             <div class="col-sm-10" style="position: relative;">
                                 <input ng-readonly="!$ctrl.isAdd" type="text" ng-model="$ctrl.MSID" class="form-control" id="inputMelonSid" placeholder="MELON SID (필수)">
-                                <a ng-show="$ctrl.MSID" target="_blank" ng-href="http://www.melon.com/song/detail.htm?songId={{$ctrl.MSID}}" class="btn btn-link" ng-click="goMSID();" style="position: absolute; top: 0px; right: 15px;">Link</a>
+                                <a ng-show="$ctrl.MSID" target="_blank" ng-href="http://www.melon.com/song/detail.htm?songId={{$ctrl.MSID}}" class="btn btn-link" ng-click="goMSID();" style="position: absolute; top: 0px; right: 15px;">Check</a>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="inputGenieSid" class="col-sm-2 control-label">G</label>
                             <div class="col-sm-10" style="position: relative;">
                                 <input type="text" ng-model="$ctrl.GSID" class="form-control" id="inputGenieSid" placeholder="GENIE SID">
-                                <a ng-show="$ctrl.GSID" target="_blank" ng-href="http://www.genie.co.kr/detail/songInfo?xgnm={{$ctrl.GSID}}"class="btn btn-link"style="position: absolute; top: 0px; right: 15px;">Link</a>
+                                <a ng-show="$ctrl.GSID" target="_blank" ng-href="http://www.genie.co.kr/detail/songInfo?xgnm={{$ctrl.GSID}}"class="btn btn-link"style="position: absolute; top: 0px; right: 15px;">Check</a>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="inputBugsSid" class="col-sm-2 control-label">B</label>
                             <div class="col-sm-10" style="position: relative;">
                                 <input type="text" ng-model="$ctrl.BSID" class="form-control" id="inputBugsSid" placeholder="BUGS SID">
-                                <a ng-show="$ctrl.BSID" target="_blank" ng-href="http://music.bugs.co.kr/track/{{$ctrl.BSID}}"class="btn btn-link" ng-click="goBSID();" style="position: absolute; top: 0px; right: 15px;">Link</a>
+                                <a ng-show="$ctrl.BSID" target="_blank" ng-href="http://music.bugs.co.kr/track/{{$ctrl.BSID}}"class="btn btn-link" ng-click="goBSID();" style="position: absolute; top: 0px; right: 15px;">Check</a>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="inputNMusicSid" class="col-sm-2 control-label">N</label>
                             <div class="col-sm-10" style="position: relative;">
                                 <input type="text" ng-model="$ctrl.NSID" class="form-control" id="inputNMusicSid" placeholder="N-MUSIC SID">
-                                <a ng-show="$ctrl.NSID" target="_blank" ng-href="http://music.naver.com/lyric/index.nhn?trackId={{$ctrl.NSID}}"class="btn btn-link" ng-click="goNSID();" style="position: absolute; top: 0px; right: 15px;">Link</a>
+                                <a ng-show="$ctrl.NSID" target="_blank" ng-href="http://music.naver.com/lyric/index.nhn?trackId={{$ctrl.NSID}}"class="btn btn-link" ng-click="goNSID();" style="position: absolute; top: 0px; right: 15px;">Check</a>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="inputNMusicSid" class="col-sm-2 control-label">Y</label>
                             <div class="col-sm-10" style="position: relative;">
                                 <input type="text" ng-model="$ctrl.YSID" class="form-control" id="inputYMusicSid" placeholder="YOUTUBE ID">
-                                <a ng-show="$ctrl.YSID" target="_blank" ng-href="https://www.youtube.com/watch?v={{$ctrl.YSID}}"class="btn btn-link" ng-click="goYSID();" style="position: absolute; top: 0px; right: 15px;">Link</a>
+                                <a ng-show="$ctrl.YSID" target="_blank" ng-href="https://www.youtube.com/watch?v={{$ctrl.YSID}}"class="btn btn-link" ng-click="goYSID();" style="position: absolute; top: 0px; right: 15px;">Check</a>
                             </div>
                         </div>
 
@@ -103,9 +103,12 @@
                 <a id="downloadLink" download="총공_{{getYMD()}}.jpg" class="btn btn-info" ng-show="buildInfos.length > 0" ng-click="exportImage();">
                     <span class="glyphicon glyphicon-export" aria-hidden="true"></span> To Image
                 </a>
+                <a id="toApp" class="btn btn-info" ng-show="isAndroid && buildInfos.length > 0" ng-click="exportHref();" href="intent://attacks?data={{deepLinkTemp}}#Intent;scheme=szzick;package=com.monpub.sming;end">
+                        <span class="glyphicon glyphicon-export" aria-hidden="true"></span>To APP
+                </a>
                 </p>
 
-                <div>
+                <div style="height: 70px;">
                     <p>
                         <h3 style="display: inline;">총공 빌더</h3>
                         <h5 style="display: inline;">Beta by 럽갤</h5>
@@ -145,7 +148,7 @@
                 <hr>
 
                 <div>
-                    <h5>갤러리</h5>
+                    <h5>갤러리  <a ng-show="buildInfo.galleryInfo.url" target="_blank" ng-href="{{buildInfo.galleryInfo.url}}">링크</a></h5>
                     <input type="text" placeholder="갤러리명" ng-model="buildInfo.galleryInfo.name" uib-typeahead=" gallery.name for gallery in getGallery($viewValue)" class="form-control" typeahead-on-select="onGallerySelected($item, buildInfo)" ng-change="onGalleryNameChanged(buildInfo)" />
                 </div>
 

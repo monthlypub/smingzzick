@@ -1,4 +1,12 @@
 var myApp = angular.module('myApp', ['ngAnimate', 'ngSanitize','ui.bootstrap']);
+myApp.config( [
+  '$compileProvider',
+  function( $compileProvider )
+  {   
+      $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|szzick|intent):/);
+      // Angular before v1.2 uses $compileProvider.urlSanitizationWhitelist(...)
+  }
+]);
 // var myApp = angular.module('myApp', ['ui.bootstrap']);
 var dataRoot, modalRoot;
 
@@ -47,7 +55,7 @@ function BuildInfo (time, title, obj) {
   };
 
   this.toString = function() {    
-    if (!this.galleryInfo || !this.galleryInfo.id) {
+    if ((!this.galleryInfo || !this.galleryInfo.id) && !this.galleryInfo.url)  {
       return "";
     }
 
@@ -56,7 +64,9 @@ function BuildInfo (time, title, obj) {
     // timeText += " " + galleryName.split("").join("/");
 
     var galleryText;
-    if (this.galleryInfo.is_minor) {
+    if (this.galleryInfo.url) {
+      galleryText = this.galleryInfo.url;
+    } else if (this.galleryInfo.is_minor) {
       galleryText = "http://gall.dcinside.com/mgallery/board/lists/?id=" + this.galleryInfo.id;
     } else {
       galleryText = "http://gall.dcinside.com/board/lists/?id=" + this.galleryInfo.id;
@@ -81,7 +91,7 @@ function BuildInfo (time, title, obj) {
 
     var sidText = this.sid.map(
       function (item) {
-        return item.text;
+        return item.text ? item.text : sidToText(item);
       }
     ).join("\n");
 
@@ -110,14 +120,51 @@ myApp.controller('MainCtrl', ['$scope', '$http', '$sce', '$uibModal', '$document
 
     }
 
+    $scope.isAndroid = navigator.userAgent.toLowerCase().indexOf("android") >= 0;
+
     $scope.songList = [];
     $scope.songSelected;
     $scope.modalInstance;
 
     $scope.default = loadDefaultInfo();
-    $scope.buildInfos = loadBuildInfos();
+  
+    var paramQuery = parse_query_string(location.search);
+    if (paramQuery && paramQuery.hasOwnProperty("json")) {
+      try {
+        var json = JSON.parse(paramQuery.json);
+        json.forEach(
+          function(j) {
+            if (j && j.sid && j.sid.length > 0) {
+              j.sid.forEach(
+                function(s) {
+                  if (s.melon) {
+                    s["title"] = "M : " + s.melon + "...";
+                  }
+                }
+              )
+            }
+            if (j && j.galleryInfo && j.galleryInfo.name_src) {
+              j.galleryInfo["url"] = j.galleryInfo.name_src
+              j.galleryInfo["name"] = j.galleryInfo.name_src
+            }
+          }
+        )
+        for (var index in json) {
+          json[index]  = new BuildInfo(null, null, json[index]);
+        }
+      
+        $scope.buildInfos = json;
+      } catch(e) {
+        console.log(e)
+        $scope.buildInfos = loadBuildInfos();  
+      }
+    } else {
+      $scope.buildInfos = loadBuildInfos();
+    }
+    
 
     $scope.copyTemp = "";
+    $scope.deepLinkTemp = "";
 
     var defaultChangeTimer, buildInfoChangeTimer;
 
@@ -197,6 +244,24 @@ myApp.controller('MainCtrl', ['$scope', '$http', '$sce', '$uibModal', '$document
       });
 
 
+    };
+
+    $scope.exportHref = function() {
+      var textArray = $scope.buildInfos.map(
+        function(item) {
+          return item.toString();
+        }
+      ).filter(function (value) {return value});
+
+      if (textArray.length == 0) {
+        alert('최소 하나 이상의 총공을 넣어주세요.\n갤러리 지정 필수입니다.');
+        return false;
+      }
+
+      var textToDeepLink = textArray.join("\n\n");
+      $scope.deepLinkTemp = encodeURI(textToDeepLink);
+
+      return true;
     };
 
     $scope.exportImage = function() {
@@ -299,7 +364,8 @@ myApp.controller('MainCtrl', ['$scope', '$http', '$sce', '$uibModal', '$document
                     'name' : name,
                     "name_src" : name,
                     "id" : gallery.name,
-                    "is_minor" : false
+                    "is_minor" : false,
+                    "url" : "http://gall.dcinside.com/board/lists/?id=" + gallery.name
                   }
                 }
             );
@@ -312,7 +378,8 @@ myApp.controller('MainCtrl', ['$scope', '$http', '$sce', '$uibModal', '$document
                     'name' : name,
                     "name_src" : name,
                     "id" : gallery.name,
-                    "is_minor" : true
+                    "is_minor" : true,
+                    "url" : "http://gall.dcinside.com/mgallery/board/lists/?id=" + gallery.name
                   }
                 }
             );
@@ -530,6 +597,28 @@ myApp.controller('ModalLinkInstanceCtrl', function ($uibModalInstance, link) {
   // }
 });
 
+function sidToText(sid) {
+  var textArray = [];
+  if (sid.melon) {
+    textArray.push("M:" + sid.melon);
+  }
+  if (sid.genie) {
+    textArray.push("G:" + sid.genie);
+  }
+  if (sid.bugs) {
+    textArray.push("B:" + sid.bugs);
+  }
+  if (sid.naver) {
+    textArray.push("N:" + sid.naver);
+  }
+  if (sid.youtube) {
+    textArray.push("Y:" + sid.youtube);
+  }
+
+
+  return "SID " + textArray.join("|");
+}
+
 function saveBuildInfos(buildInfos) {
   localStorage.setItem('BUILD_INFO', JSON.stringify(buildInfos));
 }
@@ -561,3 +650,27 @@ function loadDefaultInfo() {
   return JSON.parse(localStorage.getItem('DEFAULT_INFO'));
 }
 
+function parse_query_string(query) {
+  if (query.indexOf("?") == 0) {
+    query = query.substr(1);
+  }
+  var vars = query.split("&");
+  var query_string = {};
+  for (var i = 0; i < vars.length; i++) {
+    var pair = vars[i].split("=");
+    var key = decodeURIComponent(pair[0]);
+    var value = decodeURIComponent(pair[1]);
+    // If first entry with this name
+    if (typeof query_string[key] === "undefined") {
+      query_string[key] = decodeURIComponent(value);
+      // If second entry with this name
+    } else if (typeof query_string[key] === "string") {
+      var arr = [query_string[key], decodeURIComponent(value)];
+      query_string[key] = arr;
+      // If third or later entry with this name
+    } else {
+      query_string[key].push(decodeURIComponent(value));
+    }
+  }
+  return query_string;
+}
