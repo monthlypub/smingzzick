@@ -127,33 +127,36 @@ myApp.controller('MainCtrl', ['$scope', '$http', '$sce', '$uibModal', '$document
     $scope.modalInstance;
 
     $scope.default = loadDefaultInfo();
+    $scope.loadRawJson = function (json) {
+      json.forEach(
+        function(j) {
+          if (j && j.sid && j.sid.length > 0) {
+            j.sid.forEach(
+              function(s) {
+                if (s.melon) {
+                  s["title"] = "M : " + s.melon + "...";
+                }
+              }
+            )
+          }
+          if (j && j.galleryInfo && j.galleryInfo.name_src) {
+            j.galleryInfo["url"] = j.galleryInfo.name_src
+            j.galleryInfo["name"] = j.galleryInfo.name_src
+          }
+        }
+      )
+      for (var index in json) {
+        json[index]  = new BuildInfo(null, null, json[index]);
+      }
+    
+      $scope.buildInfos = json;
+    }
   
     var paramQuery = parse_query_string(location.search);
     if (paramQuery && paramQuery.hasOwnProperty("json")) {
       try {
         var json = JSON.parse(paramQuery.json);
-        json.forEach(
-          function(j) {
-            if (j && j.sid && j.sid.length > 0) {
-              j.sid.forEach(
-                function(s) {
-                  if (s.melon) {
-                    s["title"] = "M : " + s.melon + "...";
-                  }
-                }
-              )
-            }
-            if (j && j.galleryInfo && j.galleryInfo.name_src) {
-              j.galleryInfo["url"] = j.galleryInfo.name_src
-              j.galleryInfo["name"] = j.galleryInfo.name_src
-            }
-          }
-        )
-        for (var index in json) {
-          json[index]  = new BuildInfo(null, null, json[index]);
-        }
-      
-        $scope.buildInfos = json;
+        loadRawJson(json);
       } catch(e) {
         console.log(e)
         $scope.buildInfos = loadBuildInfos();  
