@@ -153,10 +153,19 @@ myApp.controller('MainCtrl', ['$scope', '$http', '$sce', '$uibModal', '$document
     }
   
     var paramQuery = parse_query_string(location.search);
+    var paramHash = location.hash;
     if (paramQuery && paramQuery.hasOwnProperty("json")) {
       try {
         var json = JSON.parse(paramQuery.json);
-        loadRawJson(json);
+        $scope.loadRawJson(json);
+      } catch(e) {
+        console.log(e)
+        $scope.buildInfos = loadBuildInfos();  
+      }
+    } else if (paramHash) {
+      try {
+        var json = JSON.parse(decodeURIComponent(paramHash.substr(1)));
+        $scope.loadRawJson(json);
       } catch(e) {
         console.log(e)
         $scope.buildInfos = loadBuildInfos();  
