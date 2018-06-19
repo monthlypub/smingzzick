@@ -359,7 +359,7 @@ myApp.controller('MainCtrl', ['$scope', '$http', '$sce', '$uibModal', '$document
 
 
     $scope.getGallery = function getGallery(keyword) {
-      var url = 'http://search.dcinside.com/autocomplete?callback=JSON_CALLBACK&k=' + keyword;
+      var url = 'https://search.dcinside.com/autocomplete?callback=JSON_CALLBACK&k=' + keyword;
       $sce.trustAsResourceUrl(url)
       
       return $http.jsonp(url, {jsonpCallbackParam: 'callback'}).then(
@@ -485,24 +485,6 @@ function loadList($http, $ctrl) {
   .error(function (data, status, headers, config) {
   });
 }
-
-function getGallery($http, keyword) {
-    return $http.get('http://search.dcinside.com/autocomplete', {
-      params: {
-        callback: '',
-        k: keyword
-      },
-      headers: {
-        "Access-Control-Allow-Origin": "*"
-      }
-    }).then(function(response){
-      return response.data.results.map(function(item){
-        return item.formatted_address;
-      });
-    });
-  };
-
-
 
 var songRoot;
 var clipRoot;
