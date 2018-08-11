@@ -471,10 +471,10 @@ myApp.controller('MainCtrl', ['$scope', '$http', '$sce', '$uibModal', '$document
     };
 }]);
 
-function loadList($http, $ctrl) {
+function loadList(token, $http, $ctrl) {
   $http({
     method: 'GET',
-    url: 'https://sming-2ea90.firebaseio.com/song.json'
+    url: ('https://sming-2ea90.firebaseio.com/song.json?auth=' + token)
   }).success(function (data, status, headers, config) {
     console.log("STATUS : " + status);
     console.log("DATA : " + data);
@@ -568,7 +568,7 @@ myApp.controller('ModalSIDInstanceCtrl', function ($uibModalInstance, $http, son
   }
 
 
-  loadList($http, $ctrl);
+  firebase.auth().currentUser.getIdToken(true).then(idToken=>{loadList(idToken, $http, $ctrl)});
 });
 
 myApp.controller('ModalLinkInstanceCtrl', function ($uibModalInstance, link) {
