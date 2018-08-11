@@ -7,7 +7,6 @@
     <script>
     </script>
     
-    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-sanitize.js"></script>
@@ -21,6 +20,34 @@
 
     <script src="app/clipboard.min.js"></script>
     <script src="app/app.js"></script>
+    
+    <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase-database.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyBu-XsLZPuJEEbp7RFAWxcYggbuEgzAYPA",
+            authDomain: "sming-2ea90.firebaseapp.com",
+            databaseURL: "https://sming-2ea90.firebaseio.com",
+            projectId: "sming-2ea90",
+            storageBucket: "sming-2ea90.appspot.com",
+            messagingSenderId: "533317026599"
+        };
+
+        let isAnonymous;
+        let uid;
+
+        firebase.initializeApp(config);
+        firebase.auth().onAuthStateChanged(
+            function(user) {
+                if (user) {
+                    var isAnonymous = user.isAnonymous;
+                    var uid = user.uid;
+                }
+            });
+        firebase.auth().signInAnonymously();
+    </script>
   </head>
   <body>
     <div ng-app="myApp" class="root">
