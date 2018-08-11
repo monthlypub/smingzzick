@@ -9,6 +9,7 @@ myApp.config( [
 ]);
 // var myApp = angular.module('myApp', ['ui.bootstrap']);
 var dataRoot, modalRoot;
+let songList;
 
 function BuildInfo (time, title, obj) {
   if (obj) {
@@ -480,7 +481,7 @@ function loadList(token, $http, $ctrl) {
     console.log("DATA : " + data);
 
 //    $ctrl.songList = dataRoot = Object.values(data);
-    $ctrl.songList = Object.keys(data).map(function(key){return data[key];});
+    $ctrl.songList = songList = Object.keys(data).map(function(key){return data[key];});
   })
   .error(function (data, status, headers, config) {
   });
@@ -567,9 +568,10 @@ myApp.controller('ModalSIDInstanceCtrl', function ($uibModalInstance, $http, son
     $ctrl.YSID = $item.youtube ? $item.youtube[0] : null;
   }
 
-  if (!$ctrl.songList) {
+  if (!songList) {
     firebase.auth().currentUser.getIdToken(true).then(idToken=>{loadList(idToken, $http, $ctrl)});
-  }
+  } else {
+    $ctrl.songList = songList;
 });
 
 myApp.controller('ModalLinkInstanceCtrl', function ($uibModalInstance, link) {
