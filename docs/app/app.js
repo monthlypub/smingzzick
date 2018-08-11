@@ -567,8 +567,9 @@ myApp.controller('ModalSIDInstanceCtrl', function ($uibModalInstance, $http, son
     $ctrl.YSID = $item.youtube ? $item.youtube[0] : null;
   }
 
-
-  firebase.auth().currentUser.getIdToken(true).then(idToken=>{loadList(idToken, $http, $ctrl)});
+  if (!$ctrl.songList) {
+    firebase.auth().currentUser.getIdToken(true).then(idToken=>{loadList(idToken, $http, $ctrl)});
+  }
 });
 
 myApp.controller('ModalLinkInstanceCtrl', function ($uibModalInstance, link) {
