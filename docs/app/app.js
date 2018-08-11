@@ -572,6 +572,7 @@ myApp.controller('ModalSIDInstanceCtrl', function ($uibModalInstance, $http, son
     firebase.auth().currentUser.getIdToken(true).then(idToken=>{loadList(idToken, $http, $ctrl)});
   } else {
     $ctrl.songList = songList;
+  }
 });
 
 myApp.controller('ModalLinkInstanceCtrl', function ($uibModalInstance, link) {
