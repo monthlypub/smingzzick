@@ -176,12 +176,12 @@
             </div>
             <div class="card" style="padding: 0px;">
               <a target="_blank" rel="noopener noreferrer" href="https://tv.naver.com/v/4086597">
+                <img id="builder_banner" src="#" style="width: 100%;border-radius: 6px;"/>
                 <script>
-                  function getBanner() {
-                    return Math.random() > 0.5 ? "res/banner_300.png" : "res/banner_300_2.jpg";
-                  }
+                  var bannerImg = document.getElementById("builder_banner");
+                  bannerImg.src = Math.random() > 0.5 ? "res/banner_300.png" : "res/banner_300_2.jpg";
                 </script>
-                <img src="getBanner();" style="width: 100%;border-radius: 6px;"/>
+
               </a>
             </div>
 
