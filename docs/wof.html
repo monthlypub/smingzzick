@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no">
-    <title>동그래유 돌림판 0.4</title>
+    <title>동그래유 돌림판 0.8</title>
     
 <!--
     
@@ -29,7 +29,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 -->
-    
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssbase/cssbase-min.css">
+
     <style type="text/css">
 
     @font-face {
@@ -41,6 +42,13 @@ SOFTWARE.
     #root{
         max-width: 500px;
         margin: auto;
+    }
+
+    #root_values{
+        position: absolute;
+        top: 100%;
+        margin: auto;
+        width: 100%;
     }
 
     text{
@@ -75,26 +83,39 @@ SOFTWARE.
 
     }
     #values {
-        position: absolute;
-        top: 100%;
-        width: 100%;
+        position: relative;
+        max-width: 500px;
+        margin: auto;
     }
-    .input_name {
-        width:70%;
+    ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: gray;
+        opacity: 0.5; /* Firefox */
+    }
+
+    input[type=text].input_name {
+        width:calc(95% - 60px);
+        width:-webkit-calc(95% - 60px);
+        width:-moz-calc(95% - 60px);
         height:40px;
+        font-weight: bolder;
     }
     .input_value {
         margin-left: 1%;
-        width: 27%;
+        width: 60px;
         height:40px;
+        font-weight: bolder;
+        text-align: center;
     }
     .input {
-        width: 100%;
-        height:40px;
-        margin: auto;
+        height:50px;
         overflow: hidden;
         white-space: nowrap;
-
+        position: relative;
+    }
+    .input_wrap {
+        width: 100%;
+        height:50px;
+        margin: auto;        
     }
     button {
         width: 100%;
@@ -109,6 +130,7 @@ SOFTWARE.
         font-family: "jua";
         font-size: 27pt;
         letter-spacing: 7pt;
+        font-weight: 100;
     }
     </style>
     
@@ -119,15 +141,34 @@ SOFTWARE.
         <div id="question">
             <h1>터치하면 돌아감</h1>
         </div>
+        
+    </div>
+    <div id="root_values">
         <div id="values">
-            <div class="input"><input class="input_name" type="text" value="커"><input class="input_value" type="number" value="70"></div>
-            <div class="input"><input class="input_name" type="text" value="떽"><input class="input_value" type="number" value="20"></div>
-            <div class="input"><input class="input_name" type="text" value="빵떡"><input class="input_value" type="number" value="10"></div>
-            <div class="input"><input class="input_name" type="text"><input class="input_value" type="number"></div>
-            <div class="input"><input class="input_name" type="text"><input class="input_value" type="number"></div>
-            <div class="input"><input class="input_name" type="text"><input class="input_value" type="number"></div>
-            <div class="input"><input class="input_name" type="text"><input class="input_value" type="number"></div>
-            <div class="input"><input class="input_name" type="text"><input class="input_value" type="number"></div>
+            <div class="input_wrap">
+                <div class="input"><input class="input_name" type="text" placeholder="이름" value="커"><input class="input_value" type="number" value="70" placeholder="값"></div>
+            </div>
+            <div class="input_wrap">
+                <div class="input"><input class="input_name" type="text" placeholder="이름" value="떽"><input class="input_value" type="number" value="20" placeholder="값"></div>
+            </div>
+            <div class="input_wrap">
+                <div class="input"><input class="input_name" type="text" value="빵떡"><input class="input_value" type="number" value="10" placeholder="값"></div>
+            </div>
+            <div class="input_wrap">
+                <div class="input"><input class="input_name" type="text" placeholder="이름"><input class="input_value" type="number" placeholder="값"></div>
+            </div>
+            <div class="input_wrap">
+                <div class="input"><input class="input_name" type="text" placeholder="이름"><input class="input_value" type="number" placeholder="값"></div>
+            </div>
+            <div class="input_wrap">
+                <div class="input"><input class="input_name" type="text" placeholder="이름"><input class="input_value" type="number" placeholder="값"></div>
+            </div>
+            <div class="input_wrap">
+                <div class="input"><input class="input_name" type="text" placeholder="이름"><input class="input_value" type="number" placeholder="값"></div>
+            </div>
+            <div class="input_wrap">
+                <div class="input"><input class="input_name" type="text" placeholder="이름"><input class="input_value" type="number" placeholder="값"></div>
+            </div>
             <button onclick="apply(this);">헿</button>
         </div>
     </div>
