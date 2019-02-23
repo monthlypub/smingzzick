@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no">
-    <title>돌림판 0.1</title>
+    <title>동그래유 돌림판 0.7</title>
     
 <!--
     
@@ -31,6 +31,13 @@ SOFTWARE.
 -->
     
     <style type="text/css">
+
+    @font-face {
+        src: url("./res/BMJUA_otf.otf");
+        font-family: "jua";
+    }
+
+
     #root{
         max-width: 500px;
         margin: auto;
@@ -45,19 +52,17 @@ SOFTWARE.
 
     }
     #chart{
-        position:absolute;
+        padding-top: 40%;
         width:100%;
-        height:100%;
     }
     #question{
         position: relative;
         width:100%;
         height:50px;
-        top:500px;
         left:0;
     }
     #question h1{
-        font-size: 50px;
+        font-size: 35px;
         font-weight: bold;
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
         position: relative;
@@ -70,8 +75,8 @@ SOFTWARE.
 
     }
     #values {
-        position: relative;
-        top: 530px;
+        position: absolute;
+        top: 100%;
         width: 100%;
     }
     .input_name {
@@ -95,13 +100,25 @@ SOFTWARE.
         width: 100%;
         height: 40px;
     }
+    h2 {
+        position: absolute;
+        width: 100%;
+        top: 0px;
+        margin-top: 0px;
+        text-align: center;
+        font-family: "jua";
+        font-size: 27pt;
+        letter-spacing: 7pt;
+    }
     </style>
     
 </head>
 <body>
     <div id="root">
         <div id="chart"></div>
-        <div id="question"><h1></h1></div>
+        <div id="question">
+            <h1>터치하면 돌아감</h1>
+        </div>
         <div id="values">
             <div class="input"><input class="input_name" type="text" value="커"><input class="input_value" type="number" value="70"></div>
             <div class="input"><input class="input_name" type="text" value="떽"><input class="input_value" type="number" value="20"></div>
@@ -113,7 +130,7 @@ SOFTWARE.
             <div class="input"><input class="input_name" type="text"><input class="input_value" type="number"></div>
             <button onclick="apply(this);">헿</button>
         </div>
-        
+        <h2>동그래유 돌림판</h3>
     </div>
     
     
@@ -209,7 +226,7 @@ SOFTWARE.
                 
 
             arcs.append("path")
-                .attr("fill", function(d, i){ return color(i); })
+                .attr("fill", function(d, i){ return colorBg(i); })
                 .attr("d", function (d) { return arc(d); });
 
             // add the text
@@ -220,6 +237,7 @@ SOFTWARE.
                     return "rotate(" + (d.angle * 180 / Math.PI - 90) + ")translate(" + (d.outerRadius -10) +")";
                 })
                 .attr("text-anchor", "end")
+                .style("fill", function(d, i) {return colorText(i)})
                 .text( function(d, i) {
                     return data[i].label;
                 });
@@ -348,6 +366,34 @@ SOFTWARE.
             }
 
             return array;
+        }
+
+        function colorText(i) {
+            const colors = [
+                0xFED600,
+                0xFFFFFD,
+                0xF3F2ED,
+                0xF4F6F1,
+                0xE6E9D4,
+                0x161211,
+                0x8C143A,
+                0x1A416B
+                ];
+            return "#" + colors[i % colors.length].toString(16);
+        }
+
+        function colorBg(i) {
+            const colors = [
+                0xE50065,
+                0xF8928D,
+                0x77B6A6,
+                0xEC7FB3,
+                0xF7D3D3,
+                0x843F45,
+                0xCD9149,
+                0xFDB3B1
+                ];
+            return "#" + colors[i % colors.length].toString(16);
         }
 
         apply();
