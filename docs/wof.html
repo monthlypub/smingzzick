@@ -2,8 +2,15 @@
 <html>
 <head>
     <meta charset="utf-8">
+    <link rel="apple-touch-icon" href="wof_res/155x155.png">
+    <link rel="ms-touch-icon" href="wof_res/144x144.png">
+    <link rel="chrome-touch-icon" href="wof_res/192x192.png">
+    <link rel="icon" type="image/png" href="wof_res/favicon_32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="wof_res/favicon_16x16.png" sizes="16x16" />    
     <meta name="viewport" content="width=device-width, user-scalable=no">
     <title>동그래유 돌림판 0.8</title>
+    <link rel="manifest" href="wof.webmanifest">
+
     
 <!--
     
@@ -34,10 +41,13 @@ SOFTWARE.
     <style type="text/css">
 
     @font-face {
-        src: url("./res/BMJUA_otf.otf");
+        src: url("wof_res/BMJUA_otf.otf");
         font-family: "jua";
     }
 
+    body{
+        margin: 0px;
+    }
 
     #root{
         max-width: 500px;
@@ -93,24 +103,28 @@ SOFTWARE.
     }
 
     input[type=text].input_name {
-        width:calc(95% - 60px);
+        /* width:calc(95% - 60px);
         width:-webkit-calc(95% - 60px);
-        width:-moz-calc(95% - 60px);
+        width:-moz-calc(95% - 60px); */
+        width: 100%;
         height:40px;
         font-weight: bolder;
     }
     .input_value {
         margin-left: 1%;
-        width: 60px;
+        width: 100%;
         height:40px;
         font-weight: bolder;
         text-align: center;
     }
-    .input {
-        height:50px;
-        overflow: hidden;
-        white-space: nowrap;
-        position: relative;
+    .td_name {
+        width:calc(100% - 60px);
+        width:-webkit-calc(100% - 60px);
+        width:-moz-calc(100% - 60px);
+
+    }
+    .td_value {
+        width: 60px;
     }
     .input_wrap {
         width: 100%;
@@ -120,6 +134,9 @@ SOFTWARE.
     button {
         width: 100%;
         height: 40px;
+        max-width: 500px;
+        margin: auto;
+        display: block;
     }
     h2 {
         position: absolute;
@@ -132,6 +149,12 @@ SOFTWARE.
         letter-spacing: 7pt;
         font-weight: 100;
     }
+    input {
+        border: none;
+    }
+    table {
+        width: 100%;
+    }
     </style>
     
 </head>
@@ -141,42 +164,85 @@ SOFTWARE.
         <div id="question">
             <h1>터치하면 돌아감</h1>
         </div>
-        
     </div>
     <div id="root_values">
-        <div id="values">
-            <div class="input_wrap">
-                <div class="input"><input class="input_name" type="text" placeholder="이름" value="커"><input class="input_value" type="number" value="70" placeholder="값"></div>
-            </div>
-            <div class="input_wrap">
-                <div class="input"><input class="input_name" type="text" placeholder="이름" value="떽"><input class="input_value" type="number" value="20" placeholder="값"></div>
-            </div>
-            <div class="input_wrap">
-                <div class="input"><input class="input_name" type="text" value="빵떡"><input class="input_value" type="number" value="10" placeholder="값"></div>
-            </div>
-            <div class="input_wrap">
-                <div class="input"><input class="input_name" type="text" placeholder="이름"><input class="input_value" type="number" placeholder="값"></div>
-            </div>
-            <div class="input_wrap">
-                <div class="input"><input class="input_name" type="text" placeholder="이름"><input class="input_value" type="number" placeholder="값"></div>
-            </div>
-            <div class="input_wrap">
-                <div class="input"><input class="input_name" type="text" placeholder="이름"><input class="input_value" type="number" placeholder="값"></div>
-            </div>
-            <div class="input_wrap">
-                <div class="input"><input class="input_name" type="text" placeholder="이름"><input class="input_value" type="number" placeholder="값"></div>
-            </div>
-            <div class="input_wrap">
-                <div class="input"><input class="input_name" type="text" placeholder="이름"><input class="input_value" type="number" placeholder="값"></div>
-            </div>
-            <button onclick="apply(this);">헿</button>
-        </div>
+        <table id="values">
+            <tr class="input_wrap">
+                <td class="td_name">
+                    <input class="input_name" type="text" placeholder="이름" value="커">
+                </td>
+                <td class="td_value">
+                    <input class="input_value" type="number" value="70" placeholder="값">
+                </td>
+            </tr>
+            <tr class="input_wrap">
+                <td class="td_name">
+                    <input class="input_name" type="text" placeholder="이름" value="떽">
+                </td>
+                <td class="td_value">
+                    <input class="input_value" type="number" value="20" placeholder="값">
+                </td>
+            </tr>
+            <tr class="input_wrap">
+                <td class="td_name">
+                    <input class="input_name" type="text" value="빵떡">
+                </td>
+                <td class="td_value">
+                    <input class="input_value" type="number" value="10" placeholder="값">
+                </td>
+            </tr>
+            <tr class="input_wrap">
+                <td class="td_name">
+                    <input class="input_name" type="text" placeholder="이름">
+                </td>
+                <td class="td_value">
+                    <input class="input_value" type="number" placeholder="값">    
+                </td>
+            </tr>
+            <tr class="input_wrap">
+                <td class="td_name">
+                    <input class="input_name" type="text" placeholder="이름">
+                </td>
+                <td class="td_value">
+                    <input class="input_value" type="number" placeholder="값">    
+                </td>
+            </tr>
+            <tr class="input_wrap">
+                <td class="td_name">
+                    <input class="input_name" type="text" placeholder="이름">
+                </td>
+                <td class="td_value">
+                    <input class="input_value" type="number" placeholder="값">    
+                </td>
+            </tr>
+            <tr class="input_wrap">
+                <td class="td_name">
+                    <input class="input_name" type="text" placeholder="이름">
+                </td>
+                <td class="td_value">
+                    <input class="input_value" type="number" placeholder="값">    
+                </td>
+            </tr>
+            <tr class="input_wrap">
+                <td class="td_name">
+                    <input class="input_name" type="text" placeholder="이름">
+                </td>
+                <td class="td_value">
+                    <input class="input_value" type="number" placeholder="값">    
+                </td>
+            </tr>
+        </table>
+        <button onclick="apply(this);">헿</button>
     </div>
     <h2>동그래유 돌림판</h3>
     
     
     <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
     <script type="text/javascript" charset="utf-8">
+        if('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('res/sw.js');
+        };
+
         var screenWidth = document.getElementById("root").offsetWidth;
 
         var padding = {top:10, right:0, bottom:30, left:0},
@@ -199,7 +265,7 @@ SOFTWARE.
             document.getElementById("chart").innerHTML = "";
             // document.getElementById("question").innerHTML = "";
 
-            var inputs = document.getElementsByClassName("input");
+            var inputs = document.getElementsByClassName("input_wrap");
 
             data = [...inputs]
                     .map(eInput => ({ "label" : eInput.getElementsByClassName("input_name")[0].value, "value":Number(eInput.getElementsByClassName("input_value")[0].value)}))

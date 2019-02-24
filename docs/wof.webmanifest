@@ -1,0 +1,28 @@
+{
+    "name": "동그래유 돌림판",
+    "short_name": "동그래유 돌림판",
+    "description": "돌림판은 동그래유 돌려유",
+    "icons": [
+        {
+        "src": "/res/128x128.png",
+        "type": "image/png",
+        "sizes": "128x128"
+        }, {
+        "src": "/res/152x152.png",
+        "type": "image/png",
+        "sizes": "152x152"
+        }, {
+        "src": "/res/144x144.png",
+        "type": "image/png",
+        "sizes": "144x144"
+        }, {
+        "src": "/res/192x192.png",
+        "type": "image/png",
+        "sizes": "192x192"
+        }
+    ],
+    "start_url": "/wof.html",
+    "display": "fullscreen",
+    "theme_color": "#B12A34",
+    "background_color": "#B12A34"
+}
