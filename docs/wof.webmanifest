@@ -4,19 +4,19 @@
     "description": "돌림판은 동그래유 돌려유",
     "icons": [
         {
-        "src": "/res/128x128.png",
+        "src": "/wof_res/128x128.png",
         "type": "image/png",
         "sizes": "128x128"
         }, {
-        "src": "/res/152x152.png",
+        "src": "/wof_res/152x152.png",
         "type": "image/png",
         "sizes": "152x152"
         }, {
-        "src": "/res/144x144.png",
+        "src": "/wof_res/144x144.png",
         "type": "image/png",
         "sizes": "144x144"
         }, {
-        "src": "/res/192x192.png",
+        "src": "/wof_res/192x192.png",
         "type": "image/png",
         "sizes": "192x192"
         }
