@@ -180,7 +180,12 @@
                 <img id="builder_banner" src="#" style="width: 100%;border-radius: 6px;"/>
                 <script>
                   var bannerImg = document.getElementById("builder_banner");
-                  bannerImg.src = "res/leader_solo/D4XQtxBUEAAjGhF.jpg";
+                  
+                  var imgs = ["A", "1", "2", "3", "4", "5", "6", "7", "8"];
+
+                  
+                  bannerImg.src = "res/2019_6th_mini/" + imgs[Math.floor(Math.random() * imgs.length)]
+ + ".jpg";
                 </script>
                </a>
             </div>
