@@ -7,26 +7,27 @@
         "img_url": "http://builder.smingzzik.com/res/2019_6th_mini/vid_banner.mp4",
         "img_width": 0,
         "img_height": 0,
-        "link": "https://www.youtube.com/watch?v=QSj2Q-HDplE&feature=youtu.be"
+        "link": "https://www.youtube.com/watch?v=qT-piObju0U&feature=youtu.be"
     },
     {
-        "seq_id": 19051601,
+        "seq_id": 19051602,
         "pos": "top",
         "expose_from": "2019-05-16 00:00",
         "expose_to": "2019-05-21 00:00",
         "img_url": "http://builder.smingzzik.com/res/2019_6th_mini/vid_banner2.mp4",
         "img_width": 0,
         "img_height": 0,
-        "link": "https://www.youtube.com/watch?v=QSj2Q-HDplE&feature=youtu.be"
+        "link": "https://www.youtube.com/watch?v=qT-piObju0U&feature=youtu.be"
     },
     {
-        "seq_id": 19051602,
+        "seq_id": 19051603,
         "pos": "mid",
         "expose_from": "2019-05-16 00:00",
         "expose_to": "2019-05-21 00:00",
         "img_url": "http://builder.smingzzik.com/res/2019_6th_mini/mid_banner.jpg",
         "img_width": 0,
-        "img_height": 0
+        "img_height": 0,
+        "link": "https://www.youtube.com/watch?v=qT-piObju0U&feature=youtu.be"
     }
 
 
