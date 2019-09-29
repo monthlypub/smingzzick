@@ -175,22 +175,15 @@
 
             </div>
 
-<!--             <div class="card" style="padding: 0px;">
+            <div class="card" style="padding: 0px;">
               <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=QSj2Q-HDplE&feature=youtu.be">
                 <img id="builder_banner" src="#" style="width: 100%;border-radius: 6px;"/>
                 <script>
                   var bannerImg = document.getElementById("builder_banner");
-                  
-                  var imgs = ["A", "1", "2", "3", "4", "5", "6", "7", "8"];
-
-                  
-                  bannerImg.src = "res/2019_6th_mini/" + imgs[Math.floor(Math.random() * imgs.length)]
- + ".jpg";
+                  bannerImg.src = "res/kei_first_soloe/builder_banner.jpg";
                 </script>
                </a>
             </div>
-
-       -->
             <div class="card" ng-repeat="buildInfo in buildInfos">
                 <button class="btn btn-danger trash" ng-click="onRemove($index);">
                     <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
