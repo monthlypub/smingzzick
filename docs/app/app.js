@@ -416,7 +416,7 @@ myApp.controller('MainCtrl', ['$scope', '$http', '$sce', '$uibModal', '$document
           }
 
 
-          var galleryInfo = majorGalleryInfo.concat(minorGalleryInfo);
+          var galleryInfo = majorGalleryInfo.concat(minorGalleryInfo).concat(miniGalleryInfo);
           return galleryInfo;
       },function(response){
         console.log(response);
