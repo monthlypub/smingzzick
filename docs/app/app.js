@@ -67,6 +67,8 @@ function BuildInfo (time, title, obj) {
     var galleryText;
     if (this.galleryInfo.url) {
       galleryText = this.galleryInfo.url;
+    } else if (this.galleryInfo.is_mini) {
+      galleryText = "http://gall.dcinside.com/mini/board/lists/?id=" + this.galleryInfo.id;
     } else if (this.galleryInfo.is_minor) {
       galleryText = "http://gall.dcinside.com/mgallery/board/lists/?id=" + this.galleryInfo.id;
     } else {
@@ -369,6 +371,8 @@ myApp.controller('MainCtrl', ['$scope', '$http', '$sce', '$uibModal', '$document
 
           var majorGalleryInfo = [];
           var minorGalleryInfo = [];
+          var miniGalleryInfo = [];
+
           if (data['0']) {
             majorGalleryInfo = data['0'].map(
                 function (gallery) {
@@ -377,7 +381,6 @@ myApp.controller('MainCtrl', ['$scope', '$http', '$sce', '$uibModal', '$document
                     'name' : name,
                     "name_src" : name,
                     "id" : gallery.name,
-                    "is_minor" : false,
                     "url" : "http://gall.dcinside.com/board/lists/?id=" + gallery.name
                   }
                 }
@@ -397,6 +400,21 @@ myApp.controller('MainCtrl', ['$scope', '$http', '$sce', '$uibModal', '$document
                 }
             );
           }
+          if (data['2']) {
+            miniGalleryInfo = data['2'].map(
+                function (gallery) {
+                  var name = gallery.mini_ko_name + " 미니 갤러리";
+                  return {
+                    'name' : name,
+                    "name_src" : name,
+                    "id" : gallery.name,
+                    "is_mini" : true,
+                    "url" : "http://gall.dcinside.com/mini/board/lists/?id=" + gallery.name
+                  }
+                }
+            );
+          }
+
 
           var galleryInfo = majorGalleryInfo.concat(minorGalleryInfo);
           return galleryInfo;
