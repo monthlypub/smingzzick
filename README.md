@@ -1,3 +1,1 @@
-# smingzzick
-----
 hahahah
