@@ -373,7 +373,7 @@ myApp.controller('MainCtrl', ['$scope', '$http', '$sce', '$uibModal', '$document
           var minorGalleryInfo = [];
           var miniGalleryInfo = [];
           
-          var galleries = data.gallery;
+          var galleries = Object.values(data.gallery);
 
           majorGalleryInfo = galleries.filter(g => g.gall_type == "G").map(g => {
             var name = gallery.ko_name + " 갤러리";
@@ -681,5 +681,3 @@ function parse_query_string(query) {
   }
   return query_string;
 }
-
-// for redeploy
