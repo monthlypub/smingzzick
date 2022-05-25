@@ -372,49 +372,40 @@ myApp.controller('MainCtrl', ['$scope', '$http', '$sce', '$uibModal', '$document
           var majorGalleryInfo = [];
           var minorGalleryInfo = [];
           var miniGalleryInfo = [];
+          
+          var galleries = data.gallery;
 
-          if (data['0']) {
-            majorGalleryInfo = data['0'].map(
-                function (gallery) {
-                  var name = gallery.ko_name + " 갤러리";
-                  return {
-                    'name' : name,
-                    "name_src" : name,
-                    "id" : gallery.name,
-                    "url" : "http://gall.dcinside.com/board/lists/?id=" + gallery.name
-                  }
-                }
-            );
-          }
-          if (data['1']) {
-            minorGalleryInfo = data['1'].map(
-                function (gallery) {
-                  var name = gallery.m_ko_name + " 마이너 갤러리";
-                  return {
-                    'name' : name,
-                    "name_src" : name,
-                    "id" : gallery.name,
-                    "is_minor" : true,
-                    "url" : "http://gall.dcinside.com/mgallery/board/lists/?id=" + gallery.name
-                  }
-                }
-            );
-          }
-          if (data['2']) {
-            miniGalleryInfo = data['2'].map(
-                function (gallery) {
-                  var name = gallery.mini_ko_name + " 미니 갤러리";
-                  return {
-                    'name' : name,
-                    "name_src" : name,
-                    "id" : gallery.name,
-                    "is_mini" : true,
-                    "url" : "http://gall.dcinside.com/mini/board/lists/?id=" + gallery.name
-                  }
-                }
-            );
-          }
-
+          majorGalleryInfo = galleries.filter(g => g.gall_type == "G").map(g => {
+            var name = gallery.ko_name + " 갤러리";
+            return {
+              'name' : name,
+              "name_src" : name,
+              "id" : gallery.name,
+              "url" : "http://gall.dcinside.com/board/lists/?id=" + gallery.name
+            }
+          })
+          
+          minorGalleryInfo = galleries.filter(g => g.gall_type == "M").map(g => {
+            var name = gallery.ko_name + " 마이너 갤러리";
+            return {
+              'name': name,
+              "name_src": name,
+              "id": gallery.name,
+              "is_minor": true,
+              "url": "http://gall.dcinside.com/mgallery/board/lists/?id=" + gallery.name
+            }
+          })
+          
+          miniGalleryInfo = galleries.filter(g => g.gall_type == "MI").map(g => {
+            var name = gallery.ko_name + " 미니 갤러리";
+            return {
+              'name': name,
+              "name_src": name,
+              "id": gallery.name,
+              "is_mini": true,
+              "url": "http://gall.dcinside.com/mini/board/lists/?id=" + gallery.name
+            }
+          })
 
           var galleryInfo = majorGalleryInfo.concat(minorGalleryInfo).concat(miniGalleryInfo);
           return galleryInfo;
