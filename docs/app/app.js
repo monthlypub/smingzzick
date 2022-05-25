@@ -375,7 +375,7 @@ myApp.controller('MainCtrl', ['$scope', '$http', '$sce', '$uibModal', '$document
           
           var galleries = Object.values(data.gallery);
 
-          majorGalleryInfo = galleries.filter(g => g.gall_type == "G").map(g => {
+          majorGalleryInfo = galleries.filter(g => g.gall_type == "G").map(gallery => {
             var name = gallery.ko_name + " 갤러리";
             return {
               'name' : name,
@@ -385,7 +385,7 @@ myApp.controller('MainCtrl', ['$scope', '$http', '$sce', '$uibModal', '$document
             }
           })
           
-          minorGalleryInfo = galleries.filter(g => g.gall_type == "M").map(g => {
+          minorGalleryInfo = galleries.filter(g => g.gall_type == "M").map(gallery => {
             var name = gallery.ko_name + " 마이너 갤러리";
             return {
               'name': name,
@@ -396,7 +396,7 @@ myApp.controller('MainCtrl', ['$scope', '$http', '$sce', '$uibModal', '$document
             }
           })
           
-          miniGalleryInfo = galleries.filter(g => g.gall_type == "MI").map(g => {
+          miniGalleryInfo = galleries.filter(g => g.gall_type == "MI").map(gallery => {
             var name = gallery.ko_name + " 미니 갤러리";
             return {
               'name': name,
