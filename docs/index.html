@@ -106,6 +106,21 @@
                             </div>
                         </div>
                         <div class="form-group">
+                          <label for="inputFloSid" class="col-sm-2 control-label">F</label>
+                          <div class="col-sm-10" style="position: relative;">
+                              <input type="text"
+                                     ng-model="$ctrl.FSID"
+                                     class="form-control"
+                                     id="inputFloSid"
+                                     placeholder="FLO SID">
+                              <a ng-show="$ctrl.FSID"
+                                 target="_blank"
+                                 ng-href="https://www.music-flo.com/detail/track/{{$ctrl.FSID}}/details"
+                                 class="btn btn-link"
+                                 style="position: absolute; top: 0; right: 15px;">Check</a>
+                          </div>
+                      </div>
+                        <div class="form-group">
                             <label for="inputNMusicSid" class="col-sm-2 control-label">Y</label>
                             <div class="col-sm-10" style="position: relative;">
                                 <input type="text" ng-model="$ctrl.YSID" class="form-control" id="inputYMusicSid" placeholder="YOUTUBE ID">
