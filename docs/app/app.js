@@ -1,4 +1,34 @@
 var myApp = angular.module('myApp', ['ngAnimate', 'ngSanitize','ui.bootstrap']);
+myApp.factory('$jsonpCallbacks', ['$window', function ($window) {
+  var callbacks = {};
+  var counter = 0;
+
+  return {
+    createCallback: function () {
+      var name = 'dcJsonp' + counter++;
+      var callback = $window[name] = function (data) {
+        callback.data = data;
+        callback.called = true;
+      };
+
+      callbacks[name] = callback;
+      return name;
+    },
+
+    wasCalled: function (name) {
+      return callbacks[name].called;
+    },
+
+    getResponse: function (name) {
+      return callbacks[name].data;
+    },
+
+    removeCallback: function (name) {
+      delete $window[name];
+      delete callbacks[name];
+    }
+  };
+}]);
 myApp.config( [
   '$compileProvider',
   function( $compileProvider )
