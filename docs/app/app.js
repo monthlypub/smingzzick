@@ -510,6 +510,7 @@ myApp.controller('ModalSIDInstanceCtrl', function ($uibModalInstance, $http, son
   $ctrl.GSID = song && song.genie ? song.genie : null;
   $ctrl.BSID = song && song.bugs ? song.bugs : null;
   $ctrl.NSID = song && song.naver ? song.naver : null;
+  $ctrl.FSID = song && song.flo ? song.flo : null;
   $ctrl.YSID = song && song.youtube ? song.youtube : null;
 
 
@@ -523,6 +524,7 @@ myApp.controller('ModalSIDInstanceCtrl', function ($uibModalInstance, $http, son
         "genie":null,
         "bugs":null,
         "naver":null,
+        "flo": null,
         "youtube":null,
         "text":""
       };
@@ -532,6 +534,7 @@ myApp.controller('ModalSIDInstanceCtrl', function ($uibModalInstance, $http, son
     $ctrl.song.genie = $ctrl.GSID;
     $ctrl.song.bugs = $ctrl.BSID;
     $ctrl.song.naver = $ctrl.NSID;
+    $ctrl.song.flo = $ctrl.FSID;
     $ctrl.song.youtube = $ctrl.YSID;
 
     var textArray = [];
@@ -546,6 +549,9 @@ myApp.controller('ModalSIDInstanceCtrl', function ($uibModalInstance, $http, son
     }
     if ($ctrl.NSID) {
       textArray.push("N:" + $ctrl.NSID);
+    }
+    if ($ctrl.FSID) {
+      textArray.push("F:" + $ctrl.FSID);
     }
     if ($ctrl.YSID) {
       textArray.push("Y:" + $ctrl.YSID);
@@ -574,6 +580,7 @@ myApp.controller('ModalSIDInstanceCtrl', function ($uibModalInstance, $http, son
     $ctrl.GSID = $item.genie ? $item.genie[0] : null;
     $ctrl.BSID = $item.bugs ? $item.bugs[0] : null;
     $ctrl.NSID = $item.naver ? $item.naver[0] : null;
+    $ctrl.FSID = $item.flo ? $item.flo[0] : null;
     $ctrl.YSID = $item.youtube ? $item.youtube[0] : null;
   }
 
@@ -617,6 +624,9 @@ function sidToText(sid) {
   }
   if (sid.naver) {
     textArray.push("N:" + sid.naver);
+  }
+  if (sid.flo) {
+    textArray.push("F:" + sid.flo);
   }
   if (sid.youtube) {
     textArray.push("Y:" + sid.youtube);
