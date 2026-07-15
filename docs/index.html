@@ -159,7 +159,7 @@
                 <a id="downloadLink" download="총공_{{getYMD()}}.jpg" class="btn btn-info" ng-show="buildInfos.length > 0" ng-click="exportImage();">
                     <span class="glyphicon glyphicon-export" aria-hidden="true"></span> To Image
                 </a>
-                <a id="toApp" class="btn btn-info" ng-show="isAndroid && buildInfos.length > 0" ng-click="exportHref();" href="intent://attacks?data={{deepLinkTemp}}#Intent;scheme=szzick;package=com.monpub.sming;end">
+                <a id="toApp" class="btn btn-info" ng-show="isAndroid && buildInfos.length > 0" ng-click="exportHref();" href="intent://attacks?data={{deepLinkTemp}}#Intent;scheme=szzick;package={{appPackage}};end">
                         <span class="glyphicon glyphicon-export" aria-hidden="true"></span>To APP
                 </a>
                 </p>
