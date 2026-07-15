@@ -187,6 +187,11 @@ myApp.controller('MainCtrl', ['$scope', '$http', '$sce', '$uibModal', '$document
   
     var paramQuery = parse_query_string(location.search);
     var paramHash = location.hash;
+
+    $scope.appPackage = paramQuery.from === "redux"
+      ? "com.monpub.sming.redux"
+      : "com.monpub.sming";
+  
     if (paramQuery && paramQuery.hasOwnProperty("json")) {
       try {
         var json = JSON.parse(paramQuery.json);
