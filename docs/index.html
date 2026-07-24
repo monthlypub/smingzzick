@@ -147,11 +147,6 @@
                 </div>
             </script>
             <div class="card">
-                <a style="width:100%;" class="btn btn-success" href="res/smingzzik_latest.apk" download>
-                    스밍찍 apk 받기
-                </a>
-            </div>
-            <div class="card">
                 <p class="export">
                 <button id="btn_copy" class="btn btn-info" ng-show="buildInfos.length > 0" ng-click="exportCopy();" data-clipboard-text="{{copyTemp}}" >
                     <span class="glyphicon glyphicon-export" aria-hidden="true"></span> Copy
@@ -202,9 +197,21 @@
 <!-- mid end -->
 
 <!-- mid start -->
-<div class="card" style="width: 100%; padding: 16px; text-align: center;">
-    AI 도움 받아서 스밍찍 되살리는 중입니다
-</div>
+            <a
+              href="https://play.google.com/store/apps/details?id=com.monpub.sming.redux"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Google Play에서 스밍찍R 다운로드"
+              style="display:block; margin-bottom:10px;"
+            >
+              <img
+                src="res/smingzzik-r-banner-v7.png"
+                alt="스밍 인증샷을 간편하게, 스밍찍R Google Play 다운로드"
+                width="490"
+                height="78"
+                style="display:block; width:100%; height:auto; border-radius:6px;"
+              >
+            </a>
 <!-- mid end -->
 
             <div class="card" ng-repeat="buildInfo in buildInfos">
