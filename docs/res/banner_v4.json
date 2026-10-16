@@ -1,12 +1,12 @@
 [
   {
-    "seq_id": 202607271,
+    "seq_id": 202610171,
     "pos": "mid",
-    "expose_from": "2026-07-27 00:00",
+    "expose_from": "2026-10-17 00:00",
     "expose_to": "2099-12-31 23:59",
-    "img_url": "https://builder.smingzzik.com/res/smingzzik-r-banner-v7.png",
+    "img_url": "https://builder.smingzzik.com/res/smingzzik-r-iphone-banner-v2.png",
     "img_width": 980,
     "img_height": 156,
-    "link": "https://play.google.com/store/apps/details?id=com.monpub.sming.redux"
+    "link": "https://apps.apple.com/kr/app/%EC%8A%A4%EB%B0%8D%EC%B0%8Dr/id6815534550"
   }
 ]
